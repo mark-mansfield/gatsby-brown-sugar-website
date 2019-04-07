@@ -13,7 +13,7 @@ const Header = props => (
         <img src={logo} alt="logo" />
       </div>
       <div className={styles.flex_col} id="cta">
-        <Scroll type="id" element="menus">
+        <Scroll type="id" element="menus_navigation">
           <button>VIEW MENU</button>
         </Scroll>
         <Scroll type="id" element="intro">

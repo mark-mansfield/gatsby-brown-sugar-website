@@ -1,0 +1,31 @@
+.nav-tabs {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+.nav-tabs > li {
+  margin-right: 4rem;
+}
+
+.menu-column-left,
+.menu-column-right {
+  min-width: 50%;
+  padding-right: 2.5rem;
+}
+
+.menu-heading {
+  margin-top: 54px;
+  /* margin-bottom: 54px; */
+}
+
+p > strong {
+  color: div;
+  padding-bottom: 20px;
+}
+p,
+sub {
+  margin: 20px 0;
+  color: darkgray;
+}

@@ -5,7 +5,12 @@ const Contact = () => {
   return (
     <div>
       <Layout>
-        <img src={MapImage} title="our location" style={{ width: "100vw" }} />
+        <img
+          src={MapImage}
+          title="our location"
+          style={{ width: "100vw" }}
+          alt="our location"
+        />
         <h1>Contact Us</h1>
         <p>
           Located in the heart of Bondi, a short stroll from the iconic Bondi

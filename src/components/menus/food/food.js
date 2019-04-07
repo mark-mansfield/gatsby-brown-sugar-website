@@ -2,7 +2,7 @@ import React from "react"
 import { TweenMax } from "gsap/all"
 import { Transition } from "react-transition-group"
 import "../../../styles/transitionStyles.css"
-
+import "../../../styles/menus.css"
 class Food extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -53,32 +53,39 @@ class Food extends React.PureComponent {
 
     // parent
     return (
-      <div className="minViewPortHeight main-column-width">
-        <section id="menus">
+      <div
+        className="minViewPortHeight main-column-width"
+        role="navigation"
+        aria-labelledby="menus_navigation"
+      >
+        <section id="menus_navigation" role="menu">
           {/* food menu nav */}
           <div className="spacer">
             <h1>Our Menus</h1>
             <sub>Try &amp; discover</sub>
             <div className="menu-wrap">
               <div className="menu-nav-bar" id="food-menu">
-                <ul role="tablist">
+                <ul role="tablist" aria-controls="menuInfo">
                   <li className="nav-item">
                     <button
+                      role="menuitem"
                       onClick={this.clearComponents.bind(this, "breakfast")}
-                      aria-controls="breakfast"
-                      aria-expanded="false"
-                      className={breakfast ? "highlight nav-link" : "nav-link"}
+                      className={
+                        breakfast ? "simple-button highlight" : "simple-button"
+                      }
                       disabled={breakfast}
+                      aria-disabled={breakfast}
                     >
                       Breakfast
                     </button>
                   </li>
                   <li className="nav-item">
                     <button
+                      role="menuitem"
                       onClick={this.clearComponents.bind(this, "brunch")}
-                      aria-controls="brunch"
-                      aria-expanded="false"
-                      className={brunch ? "highlight nav-link" : "nav-link"}
+                      className={
+                        brunch ? "simple-button highlight " : "simple-button"
+                      }
                       disabled={brunch}
                     >
                       Brunch
@@ -86,10 +93,11 @@ class Food extends React.PureComponent {
                   </li>
                   <li className="nav-item">
                     <button
+                      role="menuitem"
                       onClick={this.clearComponents.bind(this, "lunch")}
-                      aria-controls="lunch"
-                      aria-expanded="false"
-                      className={lunch ? "highlight nav-link" : "nav-link"}
+                      className={
+                        lunch ? "highlight simple-button" : "simple-button"
+                      }
                       disabled={lunch}
                     >
                       Lunch
@@ -97,10 +105,11 @@ class Food extends React.PureComponent {
                   </li>
                   <li className="nav-item">
                     <button
+                      role="menuitem"
                       onClick={this.clearComponents.bind(this, "dinner")}
-                      aria-controls="dinner"
-                      aria-expanded="false"
-                      className={dinner ? "highlight nav-link" : "nav-link"}
+                      className={
+                        dinner ? "highlight simple-button" : "simple-button"
+                      }
                       disabled={dinner}
                     >
                       Dinner
@@ -110,7 +119,8 @@ class Food extends React.PureComponent {
               </div>
             </div>
           </div>
-
+        </section>
+        <section>
           {/* breakfast */}
           <Transition
             timeout={1000}
@@ -447,11 +457,11 @@ class Food extends React.PureComponent {
                 <sub>from 6pm</sub>
                 <p>
                   <a
-                    href="http://brownsugarbondi.com.au/wp-content/uploads/2019/03/bs-day-menu-mar-2019.pdf"
+                    href="http://brownsugarbondi.com.au/wp-content/uploads/2019/03/bs-dinner-menu-180319.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Download Day Menu
+                    Download Dinner Menu
                   </a>
                 </p>
               </div>
@@ -487,7 +497,6 @@ class Food extends React.PureComponent {
                     yolk, potato gaufrette 21
                   </p>
                 </div>
-
                 <div className="menu-column-right">
                   <h4>SIDES</h4>
                   <p>pomme purée or crisp herb potatoes 9.5</p>
@@ -540,7 +549,9 @@ class Food extends React.PureComponent {
                 </div>
 
                 <div className="menu-column-right">
+                  <br />
                   <h4>DESSERT</h4>
+                  <br />
                   <p>mango sorbet, lime granita, papaya, coconut macaroon 14</p>
                   <p>
                     hazelnut chocolate fondant, salted butterscotch &amp;
