@@ -71,7 +71,9 @@ class Food extends React.PureComponent {
                       role="menuitem"
                       onClick={this.clearComponents.bind(this, "breakfast")}
                       className={
-                        breakfast ? "simple-button highlight" : "simple-button"
+                        breakfast
+                          ? "simple-button-sml highlight"
+                          : "simple-button-sml"
                       }
                       disabled={breakfast}
                       aria-disabled={breakfast}
@@ -84,7 +86,9 @@ class Food extends React.PureComponent {
                       role="menuitem"
                       onClick={this.clearComponents.bind(this, "brunch")}
                       className={
-                        brunch ? "simple-button highlight " : "simple-button"
+                        brunch
+                          ? "simple-button-sml highlight "
+                          : "simple-button-sml"
                       }
                       disabled={brunch}
                     >
@@ -96,7 +100,9 @@ class Food extends React.PureComponent {
                       role="menuitem"
                       onClick={this.clearComponents.bind(this, "lunch")}
                       className={
-                        lunch ? "highlight simple-button" : "simple-button"
+                        lunch
+                          ? "highlight simple-button-sml"
+                          : "simple-button-sml"
                       }
                       disabled={lunch}
                     >
@@ -108,7 +114,9 @@ class Food extends React.PureComponent {
                       role="menuitem"
                       onClick={this.clearComponents.bind(this, "dinner")}
                       className={
-                        dinner ? "highlight simple-button" : "simple-button"
+                        dinner
+                          ? "highlight simple-button-sml"
+                          : "simple-button-sml"
                       }
                       disabled={dinner}
                     >
