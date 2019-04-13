@@ -11,20 +11,16 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.5;
 }
+
 button {
-  margin: 5px;
-}
-.button,
-button,
-input[type="button"] {
-  text-decoration: none;
-  color: #e1a709;
+  width: 190px;
   padding: 15px;
   background-color: transparent;
   border: 1px solid rgb(225, 167, 9);
   text-align: center;
   font-size: 2rem;
-  min-width: 166px;
+  text-decoration: none;
+  color: #e1a709;
 }
 
 .button:hover,
@@ -34,10 +30,15 @@ button:hover {
   color: white;
 }
 
+button.plain-button {
+  border: none;
+  background: transparent;
+  color: #666 !important;
+}
 button.simple-button {
   border: none;
   background: transparent;
-  color: #666;
+  color: #666 !important;
 }
 
 button.simple-button:hover {

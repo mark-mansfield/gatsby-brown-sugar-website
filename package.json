@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "formik": "^1.5.2",
     "gatsby": "^2.3.3",
     "gatsby-image": "^2.0.35",
     "gatsby-plugin-manifest": "^2.0.25",
@@ -17,12 +18,20 @@
     "gsap": "^2.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-accessible-accordion": "^3.0.0",
+    "react-calendar": "^2.18.1",
+    "react-date-picker": "^7.5.0",
+    "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
+    "react-icons": "^3.5.0",
+    "react-modal": "^3.8.1",
     "react-scroll-to-element": "^0.2.0",
     "react-scrollspy": "^3.4.0",
+    "react-select": "^2.4.2",
     "react-transition-group": "^2.8.0",
-    "react-waypoint": "^8.0.3"
+    "react-waypoint": "^8.0.3",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "prettier": "^1.16.4"

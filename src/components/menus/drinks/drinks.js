@@ -1,7 +1,6 @@
 import React from "react"
 import { TweenMax } from "gsap/all"
 import { Transition } from "react-transition-group"
-import "../../../styles/transitionStyles.css"
 import "../../../styles/menus.css"
 class Drinks extends React.PureComponent {
   constructor(props) {
@@ -58,7 +57,7 @@ class Drinks extends React.PureComponent {
         role="navigation"
         aria-labelledby="drinks_navigation"
       >
-        <section id="drinks_navigation" role="menu">
+        <div id="drinks_navigation" role="menu">
           {/* drinks menu nav */}
           <div className="spacer">
             <h1>Drinks</h1>
@@ -129,7 +128,7 @@ class Drinks extends React.PureComponent {
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
         <section>
           {/* general drinks */}

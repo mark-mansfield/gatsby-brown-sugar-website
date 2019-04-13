@@ -18,8 +18,8 @@ const StickyNav = props => {
         offset={-300}
       >
         <li>
-          <Scroll type="id" element="menus_navigation">
-            <button className="simple-button">menus</button>
+          <Scroll type="id" element="menu__navigation">
+            <button className="simple-button dark_text">menus</button>
           </Scroll>
         </li>
         <li>

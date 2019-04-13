@@ -1,7 +1,6 @@
 import React from "react"
 import { TweenMax } from "gsap/all"
 import { Transition } from "react-transition-group"
-import "../../../styles/transitionStyles.css"
 import "../../../styles/menus.css"
 class Food extends React.PureComponent {
   constructor(props) {
@@ -12,6 +11,10 @@ class Food extends React.PureComponent {
       lunch: false,
       dinner: false,
     }
+  }
+
+  showModal() {
+    this.props.modalState()
   }
 
   clearComponents(ref) {
@@ -54,80 +57,85 @@ class Food extends React.PureComponent {
     // parent
     return (
       <div
-        className="minViewPortHeight main-column-width"
+        className="spacer minViewPortHeight main-column-width spacer"
         role="navigation"
-        aria-labelledby="menus_navigation"
+        aria-labelledby="menu__navigation"
       >
-        <section id="menus_navigation" role="menu">
+        <div className="menu__nav-bar" role="menu">
           {/* food menu nav */}
-          <div className="spacer">
+          <div className="flex-col">
             <h1>Our Menus</h1>
             <sub>Try &amp; discover</sub>
-            <div className="menu-wrap">
-              <div className="menu-nav-bar" id="food-menu">
-                <ul role="tablist" aria-controls="menuInfo">
-                  <li className="nav-item">
-                    <button
-                      role="menuitem"
-                      onClick={this.clearComponents.bind(this, "breakfast")}
-                      className={
-                        breakfast
-                          ? "simple-button-sml highlight"
-                          : "simple-button-sml"
-                      }
-                      disabled={breakfast}
-                      aria-disabled={breakfast}
-                    >
-                      Breakfast
-                    </button>
-                  </li>
-                  <li className="nav-item">
-                    <button
-                      role="menuitem"
-                      onClick={this.clearComponents.bind(this, "brunch")}
-                      className={
-                        brunch
-                          ? "simple-button-sml highlight "
-                          : "simple-button-sml"
-                      }
-                      disabled={brunch}
-                    >
-                      Brunch
-                    </button>
-                  </li>
-                  <li className="nav-item">
-                    <button
-                      role="menuitem"
-                      onClick={this.clearComponents.bind(this, "lunch")}
-                      className={
-                        lunch
-                          ? "highlight simple-button-sml"
-                          : "simple-button-sml"
-                      }
-                      disabled={lunch}
-                    >
-                      Lunch
-                    </button>
-                  </li>
-                  <li className="nav-item">
-                    <button
-                      role="menuitem"
-                      onClick={this.clearComponents.bind(this, "dinner")}
-                      className={
-                        dinner
-                          ? "highlight simple-button-sml"
-                          : "simple-button-sml"
-                      }
-                      disabled={dinner}
-                    >
-                      Dinner
-                    </button>
-                  </li>
-                </ul>
-              </div>
+          </div>
+          <div className="menu__nav-bar-wrap">
+            <div id="food-menu">
+              <ul
+                className="menu__nav-bar menu__nav-bar-tabs"
+                role="tablist"
+                aria-controls="menuInfo"
+              >
+                <li>
+                  <button
+                    role="menuitem"
+                    onClick={this.clearComponents.bind(this, "breakfast")}
+                    className={
+                      breakfast
+                        ? "simple-button-sml highlight"
+                        : "simple-button-sml "
+                    }
+                    disabled={breakfast}
+                    aria-disabled={breakfast}
+                  >
+                    Breakfast
+                  </button>
+                </li>
+                <li>
+                  <button
+                    role="menuitem"
+                    onClick={this.clearComponents.bind(this, "brunch")}
+                    className={
+                      brunch
+                        ? "simple-button-sml highlight "
+                        : "simple-button-sml"
+                    }
+                    disabled={brunch}
+                  >
+                    Brunch
+                  </button>
+                </li>
+                <li>
+                  <button
+                    role="menuitem"
+                    onClick={this.clearComponents.bind(this, "lunch")}
+                    className={
+                      lunch
+                        ? "highlight simple-button-sml"
+                        : "simple-button-sml"
+                    }
+                    disabled={lunch}
+                  >
+                    Lunch
+                  </button>
+                </li>
+                <li>
+                  <button
+                    role="menuitem"
+                    onClick={this.clearComponents.bind(this, "dinner")}
+                    className={
+                      dinner
+                        ? "highlight simple-button-sml"
+                        : "simple-button-sml"
+                    }
+                    disabled={dinner}
+                  >
+                    Dinner
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
-        </section>
+        </div>
+
         <section>
           {/* breakfast */}
           <Transition
@@ -229,6 +237,7 @@ class Food extends React.PureComponent {
                   </p>
                 </div>
               </div>
+              <button onClick={this.showModal.bind(this)}>BOOK A TABLE</button>
             </div>
           </Transition>
 

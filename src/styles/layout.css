@@ -1,3 +1,207 @@
+/* menu animation default setting */
+.transition-card {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* modal settings */
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.modal__toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal__close {
+  font-size: 3rem;
+  color: white;
+}
+
+.modal__close:hover {
+  cursor: pointer;
+  color: dodgerblue;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: none;
+}
+
+.main__header {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: black;
+}
+
+.main__header-logo {
+  width: 50%;
+}
+
+.main__header-welcome {
+  margin-top: 20%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.main__header-cta {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__header-cta > button {
+  margin: 10px 0;
+}
+
+.main > div > section,
+.main > section {
+  display: flex;
+  flex-flow: column;
+  width: 60vw;
+  margin: 54px;
+}
+
+/* basic layout definitions  */
+.flex_row {
+  display: flex;
+  flex-flow: row;
+}
+
+.flex_col {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+.reservation {
+  display: none;
+}
+
+#nav {
+  position: absolute;
+  width: 100vw;
+  display: none;
+}
+
+#nav.alt {
+  position: fixed;
+  top: 0;
+  padding: 0.5em 1em;
+  background-color: rgba(247, 247, 247, 0.95);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav > ul {
+  width: 60vw;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-item {
+  flex-grow: 2;
+}
+
+.menu-nav-bar > ul {
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+}
+
+.flex-col {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
+}
+
+.spacer {
+  padding-top: 100px;
+}
+
+.minViewPortHeight {
+  min-height: 80vh;
+}
+
+/* alignment classes */
+.align-right {
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+/* media queries */
+@media (min-width: 56rem) {
+  .ReactModal__Content {
+    width: 850px;
+    top: 100px;
+    height: auto;
+  }
+
+  .main__header {
+    justify-content: center;
+  }
+
+  .main__header-welcome {
+    flex-flow: row !important;
+    margin-top: 0px;
+  }
+
+  .main__header-logo {
+    width: 100% !important;
+  }
+}
+
+/* homepage cta transition */
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
@@ -37,103 +241,29 @@
   }
 }
 
-#cta {
-  animation-duration: 3s;
-  animation-name: slidein;
+.main__header-title {
+  -webkit-animation: fadein 0.25s ease-in alternate;
+  -moz-animation: fadein 0.25s ease-in alternate;
+  -o-animation: fadeIn 0.25s ease-in;
+  animation: fadein 0.25s ease-in alternate;
+}
+.main__header-logo {
+  -webkit-animation: fadein 1s ease-in alternate;
+  -moz-animation: fadein 1s ease-in alternate;
+  -o-animation: fadeIn 1s ease-in;
+  animation: fadein 1s ease-in alternate;
 }
 
-#welcome {
-  -webkit-animation: fadein 2s ease-in alternate;
-  -moz-animation: fadein 2s ease-in alternate;
-  -o-animation: fadeIn 2s ease-in;
-  animation: fadein 2s ease-in alternate;
+.main__header-button-1 {
+  -webkit-animation: fadein 1.25s ease-in alternate;
+  -moz-animation: fadein 1.25s ease-in alternate;
+  -o-animation: fadeIn 1.25s ease-in;
+  animation: fadein 1.25s ease-in alternate;
 }
 
-.main {
-  display: flex;
-  flex-flow: column;
-  justify-content: sp;
-  align-items: center;
-  width: 100vw;
-  background-color: none;
-}
-
-.main > div > section {
-  display: flex;
-  flex-flow: column;
-  width: 60vw;
-  margin: 54px;
-}
-
-.spacer {
-  padding-top: 100px;
-}
-
-.minViewPortHeight {
-  min-height: auto;
-}
-
-#nav {
-  position: absolute;
-  width: 100vw;
-  display: none;
-}
-
-#nav.alt {
-  position: fixed;
-  top: 0;
-  padding: 0.5em 1em;
-  background-color: rgba(247, 247, 247, 0.95);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  z-index: 10000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#nav > ul {
-  width: 60vw;
-  height: 100%;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.nav-item {
-  flex-grow: 2;
-}
-
-.menu-wrap {
-  margin: 2rem 0;
-}
-
-.menu-nav-bar > ul {
-  display: flex;
-  justify-content: flex-start;
-  width: 60%;
-}
-
-.flex-row {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-content: center;
-  width: 100%;
-}
-
-.flex-col {
-  display: flex;
-  width: 100%;
-  flex-flow: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: center;
-}
-
-/* alignment classes */
-.align-right {
-  justify-content: flex-end;
-  padding: 20px;
+.main__header-button-2 {
+  -webkit-animation: fadein 1.5s ease-in alternate;
+  -moz-animation: fadein 1.5s ease-in alternate;
+  -o-animation: fadeIn 1.5s ease-in;
+  animation: fadein 1.5s ease-in alternate;
 }

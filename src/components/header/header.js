@@ -1,35 +1,36 @@
-import PropTypes from "prop-types"
 import React from "react"
-import styles from "./header.module.css"
-import "./header.module.css"
+
 import logo from "../../images/logo-dark.png"
 import Scroll from "../Scroll"
 
-const Header = props => (
-  <header className={styles.main__header}>
-    <div className={styles.flex_row} id="welcome">
-      <div style={{ textAlign: "center" }}>
-        <h1>Welcome To</h1>
-        <img src={logo} alt="logo" />
-      </div>
-      <div className={styles.flex_col} id="cta">
-        <Scroll type="id" element="menus_navigation">
-          <button>VIEW MENU</button>
-        </Scroll>
-        <Scroll type="id" element="intro">
-          <button>BOOK A TABLE</button>
-        </Scroll>
-      </div>
-    </div>
-  </header>
-)
+class Header extends React.Component {
+  showModal() {
+    this.props.modalState()
+  }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  render() {
+    return (
+      <header className="main__header">
+        <div className="main__header-welcome">
+          <div>
+            <h1 className="main__header-title">Welcome To</h1>
+            <img className="main__header-logo" src={logo} alt="logo" />
+          </div>
+          <div className="main__header-cta" id="cta">
+            <Scroll type="id" element="menu__navigation">
+              <button className="main__header-button-1">VIEW MENU</button>
+            </Scroll>
+            <button
+              className="main__header-button-2"
+              onClick={this.showModal.bind(this)}
+            >
+              BOOK A TABLE
+            </button>
+          </div>
+        </div>
+      </header>
+    )
+  }
 }
 
 export default Header
