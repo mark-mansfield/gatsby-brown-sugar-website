@@ -1,0 +1,566 @@
+/* food menu animation default setting */
+.transition-card {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* modal settings */
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.modal__toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal__close {
+  font-size: 3rem;
+  color: white;
+}
+
+.modal__close:hover {
+  cursor: pointer;
+  color: dodgerblue;
+}
+
+#phone_number {
+  display: none;
+}
+
+#callnowbutton {
+  display: block;
+  position: fixed;
+  text-decoration: none;
+  z-index: 2147483647;
+  color: white;
+  width: 65px;
+  height: 60px;
+  border-radius: 50%;
+  border-top: 1px solid #4e3f2d;
+  bottom: 15px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transform: scale(1);
+  left: 20px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNjAgNjAiPjxwYXRoIGQ9Ik03LjEwNCAxNC4wMzJsMTUuNTg2IDEuOTg0YzAgMC0wLjAxOSAwLjUgMCAwLjk1M2MwLjAyOSAwLjc1Ni0wLjI2IDEuNTM0LTAuODA5IDIuMSBsLTQuNzQgNC43NDJjMi4zNjEgMy4zIDE2LjUgMTcuNCAxOS44IDE5LjhsMTYuODEzIDEuMTQxYzAgMCAwIDAuNCAwIDEuMSBjLTAuMDAyIDAuNDc5LTAuMTc2IDAuOTUzLTAuNTQ5IDEuMzI3bC02LjUwNCA2LjUwNWMwIDAtMTEuMjYxIDAuOTg4LTI1LjkyNS0xMy42NzRDNi4xMTcgMjUuMyA3LjEgMTQgNy4xIDE0IiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0iTTcuMTA0IDEzLjAzMmw2LjUwNC02LjUwNWMwLjg5Ni0wLjg5NSAyLjMzNC0wLjY3OCAzLjEgMC4zNWw1LjU2MyA3LjggYzAuNzM4IDEgMC41IDIuNTMxLTAuMzYgMy40MjZsLTQuNzQgNC43NDJjMi4zNjEgMy4zIDUuMyA2LjkgOS4xIDEwLjY5OWMzLjg0MiAzLjggNy40IDYuNyAxMC43IDkuMSBsNC43NC00Ljc0MmMwLjg5Ny0wLjg5NSAyLjQ3MS0xLjAyNiAzLjQ5OC0wLjI4OWw3LjY0NiA1LjQ1NWMxLjAyNSAwLjcgMS4zIDIuMiAwLjQgMy4xMDVsLTYuNTA0IDYuNSBjMCAwLTExLjI2MiAwLjk4OC0yNS45MjUtMTMuNjc0QzYuMTE3IDI0LjMgNy4xIDEzIDcuMSAxMyIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==")
+    center/50px 50px no-repeat #211200;
+}
+
+.main__header,
+.sub__nav {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main__header-top-bar,
+.sub__nav-top-bar {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 0.0425rem solid rgba(55, 56, 57, 0.25);
+}
+
+.sub__nav-top-bar {
+  height: 51px;
+}
+
+.header-menu-burger-bun--top {
+  width: 0.6875rem;
+  transform: translateY(-0.3125rem);
+}
+
+.header-menu-burger-meat {
+  width: 100%;
+}
+
+.header-menu-burger-bun--bottom {
+  width: 0.4375rem;
+  transform: translateY(0.3125rem);
+}
+
+.header-menu-burger-bun,
+.header-menu-burger-meat {
+  position: relative;
+  left: 0;
+  top: 50%;
+  display: block;
+  margin-top: -0.0625rem;
+  border-top: 0.125rem solid;
+}
+
+.main__header-branding {
+  width: 250px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.main__header-branding div,
+.sub__nav-branding div {
+  margin-left: 10px;
+}
+
+.main__header-branding img {
+  width: 120px;
+  height: 100%;
+  margin-top: 8px;
+}
+
+.sub__nav-branding {
+  margin-left: 10px;
+}
+
+.main__header-left-part,
+.sub__nav-left-part {
+  display: flex;
+}
+
+.sub__nav-left-part {
+  min-width: 180px;
+}
+
+.sub__nav-branding-message {
+  padding-right: 30px;
+  border-right: 0.0625rem solid rgba(16, 24, 32, 0.25);
+}
+
+.main_header-right-part {
+  display: none;
+}
+
+.main__header-mid-part {
+  display: flex;
+  flex: 1;
+}
+
+.sub__nav-mid-part {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  margin-left: 40px;
+}
+
+.sub__nav-mid-part > div {
+  margin-right: 60px;
+}
+
+.main__header-utilities-wrapper,
+.sub__nav-utilities-wrapper {
+  height: 100%;
+}
+
+.header-utilities,
+.sub__nav-utilities {
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+svg {
+  vertical-align: middle;
+}
+.header-utilities-trigger-icon,
+.sub__nav-utilities-trigger-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.75rem;
+}
+.header-utilities-cell,
+.sub__nav-utilities-cell {
+  display: table-cell;
+  vertical-align: top;
+  height: 100%;
+  width: 10%;
+}
+
+.header-utilities-cell--gift-card,
+.sub__nav-utilities-cell--gift-card {
+  background-color: white;
+  border-left: 0.0625rem solid rgba(16, 24, 32, 0.25);
+}
+
+.header-utilities-cell--book,
+.header-utilities-cell--gift-card,
+.sub__nav-utilities-cell--book,
+.sub__nav-utilities-cell--gift-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header-utilities-cell--book,
+.sub__nav-utilities-cell--book {
+  color: white;
+  background-color: black;
+}
+
+.gift-card-option,
+.booking-option {
+  display: none;
+}
+
+.page_cta--sticky {
+  display: block;
+  color: white;
+  background-color: black;
+}
+
+.page_cta--sticky {
+  display: block;
+  position: fixed;
+  bottom: 0.625rem;
+  right: 0.625rem;
+  height: 3rem;
+  z-index: 50;
+  transform: translateZ(0);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 112px;
+  color: #333;
+}
+
+.hero--venu-banner {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hero--venu-banner-image {
+  width: 100%;
+  height: 1005;
+  text-align: center;
+}
+
+#nav {
+  display: none;
+}
+/* basic layout definitions  */
+.flex_row {
+  display: flex;
+  flex-flow: row;
+}
+
+.flex_col {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+.reservation {
+  display: none;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.flex-col {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.spacer {
+  padding-top: 100px;
+}
+
+.minViewPortHeight {
+  min-height: 80vh;
+}
+
+/* alignment classes */
+.align-right {
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.simple-button {
+  padding: 0;
+}
+
+.simple-button > small {
+  color: #8b8b8b;
+}
+.simple-button > small:hover {
+  color: black;
+}
+
+/* overide <small> */
+.smaller-text {
+  font-size: 11px;
+}
+
+.contact-option {
+  display: none;
+}
+.groups-option {
+  display: none;
+}
+.reservations-option {
+  display: none;
+}
+
+/* remove reservation button from sub nav as we shrink down */
+@media (min-width: 29rem) {
+  .reservations-option {
+    display: flex;
+  }
+}
+
+/* remove group button from sub nav as we shrink down */
+@media (min-width: 30rem) {
+  .groups-option {
+    display: none;
+  }
+}
+
+/* remove contact button from sub nav as we shrink down */
+@media (min-width: 38rem) {
+  .contact-option {
+    display: none;
+  }
+}
+
+@media (min-width: 48rem) {
+  .contact-option {
+    display: none;
+  }
+
+  .groups-option {
+    display: flex;
+  }
+  .ReactModal__Content {
+    width: 850px;
+    top: 100px;
+    height: auto;
+  }
+
+  .hamburger_nav > svg {
+    width: 30px;
+    height: 40px;
+  }
+
+  #phone_number {
+    display: block;
+    font-size: 2rem;
+  }
+
+  #call_now_button {
+    display: none;
+  }
+
+  #phoneNUmber {
+    display: block;
+  }
+
+  .main__header {
+    justify-content: center;
+  }
+  .main__header-hamburger-button {
+    width: 112px;
+  }
+
+  .main__header-hamburger-button:hover,
+  .gift-card-button:hover {
+    background-color: #d1d1d1;
+  }
+
+  .main__header-top-bar {
+    flex-flow: row !important;
+  }
+
+  .sub__nav-header-menu-burger {
+    display: none;
+  }
+
+  .sub__nav-branding {
+    width: auto;
+  }
+
+  .sub__nav-branding > img {
+    margin-right: 10px;
+  }
+
+  .sub__nav-branding-message {
+    margin-right: 20px;
+  }
+
+  .main_header-right-part,
+  .sub__nav-mid-part {
+    display: flex;
+  }
+
+  .sub__nav-mid-part > div {
+    margin-right: 60px;
+  }
+
+  .sub__nav-mid-part > div:last-child {
+    margin-right: 0px;
+  }
+
+  .sub__nav-right-part {
+    display: flex;
+  }
+
+  .gift-card-option {
+    display: none;
+  }
+
+  .page_cta--sticky {
+    display: none;
+  }
+
+  .hero {
+    width: 100%;
+    height: 20rem;
+  }
+
+  #nav {
+    position: absolute;
+    width: 100vw;
+    display: block;
+  }
+
+  #nav.alt {
+    position: fixed;
+    top: 0;
+    padding: 0.5em 1em;
+    background-color: rgba(247, 247, 247, 0.95);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #nav > ul {
+    width: 60vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav-item {
+    flex-grow: 2;
+  }
+
+  .menu-nav-bar > ul {
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+  }
+}
+
+/* media  query for medium sized screens */
+@media (min-width: 50rem) {
+  .contact-option {
+    display: flex;
+  }
+
+  .booking-option {
+    display: none;
+  }
+}
+
+/* Media queries for large screens */
+/* adjust the sub nav to show all options */
+@media (min-width: 67rem) {
+  .sub__nav-right-part {
+    display: flex;
+  }
+
+  .contact-option,
+  .groups-option,
+  .gift-card-option,
+  .booking-option {
+    display: flex;
+  }
+}
+
+/* homepage logo transition */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* logo animation default setting */
+
+#hero--venu-banner-image,
+.sub__nav-top-bar {
+  -webkit-animation: fadein 1s ease-in alternate;
+  -moz-animation: fadein 1s ease-in alternate;
+  -o-animation: fadeIn 1s ease-in;
+  animation: fadein 1s ease-in alternate;
+}

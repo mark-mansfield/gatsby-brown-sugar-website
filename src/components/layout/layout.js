@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Button from "@material-ui/core/Button"
+import Scroll from "../Scroll"
 /* eslint-disable import/first */
 import { withStyles } from "@material-ui/core/styles"
 import Drawer from "@material-ui/core/Drawer"
@@ -55,15 +56,26 @@ class Template extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
+          <Scroll type="id" element="menu__navigation">
+            <ListItem button key="menu">
+              <ListItemText primary="Menu" />
             </ListItem>
-          ))}
+          </Scroll>
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
+          <ListItem>
+            <div className="phone_number">PH: (02) 9130 1566</div>
+            <a href="tel:0291301566" id="call_now_button" />
+          </ListItem>
+        </List>
+
+        <List>
+          {[
+            "106 Curlewis St, Bondi Beach NSW 2026",
+            "Dinner tuesday - Sunday",
+            "Breakfast - Firday to Sunday",
+          ].map((text, index) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>
@@ -76,7 +88,6 @@ class Template extends React.Component {
         <div
           className="hamburger_nav"
           style={{
-            position: "absolute",
             top: "0",
             left: "0",
             zIndex: "1001",
@@ -85,9 +96,7 @@ class Template extends React.Component {
           <MenuIcon
             className="menu-icon"
             onClick={this.toggleDrawer("left", true)}
-          >
-            Open Left
-          </MenuIcon>
+          />
         </div>
         <Drawer
           open={this.state.left}

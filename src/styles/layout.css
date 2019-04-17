@@ -42,20 +42,42 @@
   color: dodgerblue;
 }
 
-/*  position: "absolute",
-            top: "0",
-            left: "0",
-            zIndex: "1001", */
+.hamburger_nav {
+  position: fixed;
+}
+
 .hamburger_nav > svg {
   margin: 20px;
-  width: 40px;
-  height: 40px;
-  color: dodgerblue;
+  width: 30px;
+  height: 30px;
+  color: rgb(229, 190, 64);
 }
 
 .hamburger_nav > svg:hover {
-  color: white;
+  color: rgb(107, 106, 106);
   cursor: pointer;
+}
+
+#phone_number {
+  display: none;
+}
+
+#callnowbutton {
+  display: block;
+  position: fixed;
+  text-decoration: none;
+  z-index: 2147483647;
+  color: white;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border-top: 1px solid #4e3f2d;
+  bottom: 15px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transform: scale(1);
+  left: 20px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNjAgNjAiPjxwYXRoIGQ9Ik03LjEwNCAxNC4wMzJsMTUuNTg2IDEuOTg0YzAgMC0wLjAxOSAwLjUgMCAwLjk1M2MwLjAyOSAwLjc1Ni0wLjI2IDEuNTM0LTAuODA5IDIuMSBsLTQuNzQgNC43NDJjMi4zNjEgMy4zIDE2LjUgMTcuNCAxOS44IDE5LjhsMTYuODEzIDEuMTQxYzAgMCAwIDAuNCAwIDEuMSBjLTAuMDAyIDAuNDc5LTAuMTc2IDAuOTUzLTAuNTQ5IDEuMzI3bC02LjUwNCA2LjUwNWMwIDAtMTEuMjYxIDAuOTg4LTI1LjkyNS0xMy42NzRDNi4xMTcgMjUuMyA3LjEgMTQgNy4xIDE0IiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0iTTcuMTA0IDEzLjAzMmw2LjUwNC02LjUwNWMwLjg5Ni0wLjg5NSAyLjMzNC0wLjY3OCAzLjEgMC4zNWw1LjU2MyA3LjggYzAuNzM4IDEgMC41IDIuNTMxLTAuMzYgMy40MjZsLTQuNzQgNC43NDJjMi4zNjEgMy4zIDUuMyA2LjkgOS4xIDEwLjY5OWMzLjg0MiAzLjggNy40IDYuNyAxMC43IDkuMSBsNC43NC00Ljc0MmMwLjg5Ny0wLjg5NSAyLjQ3MS0xLjAyNiAzLjQ5OC0wLjI4OWw3LjY0NiA1LjQ1NWMxLjAyNSAwLjcgMS4zIDIuMiAwLjQgMy4xMDVsLTYuNTA0IDYuNSBjMCAwLTExLjI2MiAwLjk4OC0yNS45MjUtMTMuNjc0QzYuMTE3IDI0LjMgNy4xIDEzIDcuMSAxMyIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==")
+    center/50px 50px no-repeat #211200;
 }
 .main {
   display: flex;
@@ -82,7 +104,7 @@
 }
 
 .main__header-welcome {
-  margin-top: 20%;
+  margin-top: 23%;
   display: flex;
   flex-flow: column;
   justify-content: space-around;
@@ -109,6 +131,9 @@
   margin: 54px;
 }
 
+#nav {
+  display: none;
+}
 /* basic layout definitions  */
 .flex_row {
   display: flex;
@@ -123,44 +148,6 @@
 
 .reservation {
   display: none;
-}
-
-#nav {
-  position: absolute;
-  width: 100vw;
-  display: none;
-}
-
-#nav.alt {
-  position: fixed;
-  top: 0;
-  padding: 0.5em 1em;
-  background-color: rgba(247, 247, 247, 0.95);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#nav > ul {
-  width: 60vw;
-  height: 100%;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.nav-item {
-  flex-grow: 2;
-}
-
-.menu-nav-bar > ul {
-  display: flex;
-  justify-content: flex-start;
-  width: 60%;
 }
 
 .flex-row {
@@ -202,6 +189,20 @@
     height: auto;
   }
 
+  .hamburger_nav > svg {
+    width: 30px;
+    height: 40px;
+  }
+  #phone_number {
+    display: block;
+    font-size: 2rem;
+  }
+  #call_now_button {
+    display: none;
+  }
+  #phoneNUmber {
+    display: block;
+  }
   .main__header {
     justify-content: center;
   }
@@ -213,6 +214,47 @@
 
   .main__header-logo {
     width: 100% !important;
+  }
+
+  .hamburger_nav {
+    position: absolute;
+  }
+
+  #nav {
+    position: absolute;
+    width: 100vw;
+    display: none;
+  }
+
+  #nav.alt {
+    position: fixed;
+    top: 0;
+    padding: 0.5em 1em;
+    background-color: rgba(247, 247, 247, 0.95);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #nav > ul {
+    width: 60vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav-item {
+    flex-grow: 2;
+  }
+
+  .menu-nav-bar > ul {
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
   }
 }
 
@@ -241,18 +283,6 @@
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes slidein {
-  from {
-    margin-top: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-top: 0%;
-    width: 100%;
   }
 }
 

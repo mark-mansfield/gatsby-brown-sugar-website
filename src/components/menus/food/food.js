@@ -1,7 +1,6 @@
 import React from "react"
 import { TweenMax } from "gsap/all"
 import { Transition } from "react-transition-group"
-import "../../../styles/menus.css"
 class Food extends React.PureComponent {
   constructor(props) {
     super(props)
