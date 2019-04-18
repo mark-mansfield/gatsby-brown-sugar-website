@@ -102,7 +102,7 @@ class Header extends React.Component {
             <div className="main__header-utilities-wrapper">
               <div className="header-utilities">
                 <div className="header-utilities-cell--gift-card">
-                  <div className="button gift-card-button">
+                  <button className="button gift-card-button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 15"
@@ -114,7 +114,7 @@ class Header extends React.Component {
                       />
                     </svg>
                     <span> GIFT CARDS</span>
-                  </div>
+                  </button>
                 </div>
                 <div className="header-utilities-cell--book">
                   <button

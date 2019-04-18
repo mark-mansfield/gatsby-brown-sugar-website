@@ -188,6 +188,7 @@
 svg {
   vertical-align: middle;
 }
+
 .header-utilities-trigger-icon,
 .sub__nav-utilities-trigger-icon {
   width: 1rem;
@@ -409,6 +410,7 @@ svg {
     width: 112px;
   }
 
+  .button:hover,
   .main__header-hamburger-button:hover,
   .gift-card-button:hover {
     background-color: #d1d1d1;
