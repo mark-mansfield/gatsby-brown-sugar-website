@@ -223,7 +223,7 @@ button.cta:after {
     display: flex;
     align-items: center;
     width: 55%;
-    margin: 0 20px;
+    min-width: 35%;
   }
 
   .section__details-info-inner {
@@ -263,7 +263,7 @@ button.cta:after {
   }
 
   .map-visible .section__details-location .section__details-map .gMap {
-    height: 362px;
+    height: 100%;
   }
   /* annimate  */
   .map-visible .section__details-column--location:nth-child(2) {

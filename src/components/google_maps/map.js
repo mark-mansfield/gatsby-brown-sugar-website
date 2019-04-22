@@ -1,12 +1,7 @@
 import React, { Component } from "react"
-
-// import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import GoogleMapReact from "google-map-react"
 
 //? check snazzymaps for some styles
-const mapStyles = { overflow: "hidden", width: " 355px", height: "362px" }
-const API_KEY = "AIzaSyDBwyEdFm3ow9XbiEIGV5A1q03dbZczBu0"
-
 const AnyReactComponent = ({ text }) => (
   <div
     style={{
@@ -55,32 +50,11 @@ export class MapContainer extends Component {
           defaultZoom={this.props.zoom}
           options={mapOptions}
         >
-          <AnyReactComponent
-            lat={-33.887887}
-            lng={151.273167}
-            text={"Brown Sugar Restaurant"}
-          />
+          <AnyReactComponent lat={-33.887887} lng={151.273167} />
         </GoogleMapReact>
-        {/* <Map
-          className="venue-map"
-          google={this.props.google}
-          zoom={16}
-          mapTypeControl={false}
-          style={mapStyles}
-          initialCenter={{
-            lat: -33.887887,
-            lng: 151.273167,
-          }}
-        >
-          <Marker name={"Brown Sugar Restaurant"} />
-        </Map> */}
       </div>
     )
   }
 }
-
-// export default GoogleApiWrapper({
-//   apiKey: API_KEY,
-// })(MapContainer)
 
 export default MapContainer

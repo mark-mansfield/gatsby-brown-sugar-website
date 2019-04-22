@@ -362,34 +362,6 @@ class Index extends React.Component {
                       </p>
                     </div>
                   </div>
-
-                  {/* <div
-                    className="section__details-location"
-                    style={{ display: "none" }}
-                  >
-                    <div className="section__details-info">
-                      <div className="section__details-info-inner">
-                        <h4>Getting There</h4>
-                        <div className="section__details-info-inner-content">
-                          Located on the corner of Bondi Rd. and Denham St.,
-                          there is plenty of street parking on Denham St. near
-                          the main entrance of The Bottle Shop.
-                          <br />
-                          <br />
-                          By Car By Public Transport
-                          <br />
-                          The closest station is Bondi Junction. Take the train
-                          from Martin Place station to Bondi Junction. From the
-                          station proceed to Stand A where you can then catch
-                          the 380 bus to Bondi Rd. at Castle St.
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="section__details-map">
-                      <GoogleMap />
-                    </div>
-                  </div> */}
                 </div>
               </div>
               <div className="page__section-border" />
