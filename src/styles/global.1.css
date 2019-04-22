@@ -1,17 +1,26 @@
-@import url("https://fonts.googleapis.com/css?family=Lato|Merriweather");
+@import url("https://fonts.googleapis.com/css?family=Lato|Merriweather:300");
 @import url("./page.section.css");
 @import url("./normalize.8.0.1.css");
+
+:root {
+  --default-px-font-size: 16px;
+  --default-rem-font-size: 1rem;
+}
+
 html {
   box-sizing: border-box;
   overflow-y: scroll;
 }
 
 body {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: var(--default-px-font-size);
+  font-size: var(--default-rem-font-size);
   font-family: "Lato", sans-serif;
   line-height: 1.5;
   color: rgba(16, 24, 32, 0.5);
+}
+.font-scheme {
+  font-size: calc(var(--default-rem-font-size) + 0.2rem);
 }
 
 h1,
@@ -21,6 +30,8 @@ h4,
 h5,
 h6 {
   font-family: "Merriweather", serif;
+  font-weight: 300;
+  color: #101820;
 }
 
 li {
@@ -32,19 +43,22 @@ ul {
 }
 
 .highlight {
-  background-color: #ff9900;
+  border: 1px solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: #ff00cf26;
 }
 
 button,
 .button {
   display: inline-block;
   vertical-align: middle;
-  min-height: 3rem;
   padding: 0.8125rem 2rem;
   margin: auto;
   background-color: transparent;
   /* border: 0.0625rem solid; */
-  color: #101820;
+  color: #69676b;
   letter-spacing: 0.07143em;
   text-align: center;
   text-decoration: none;
@@ -68,8 +82,15 @@ span:hover {
   cursor: pointer;
 }
 
+span.button-link {
+  padding: none;
+  text-decoration: underline;
+  padding: 0 3px;
+  color: #69676b;
+  font-weight: bolder;
+}
 a {
-  color: black;
+  color: #69676b;
 }
 
 a:hover {

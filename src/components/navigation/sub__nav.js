@@ -1,31 +1,26 @@
 import React from "react"
-// import Scrollspy from "react-scrollspy"
-// import Scroll from "../Scroll"
+import Scroll from "../Scroll"
 
 class StickyNav extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   showModal() {
     this.props.modalState()
   }
 
   render() {
     return (
-      <div>
+      <div id="sub__nav" className={this.props.sticky ? "alt" : "hidden"}>
         <div className="sub__nav-top-bar">
           <div className="sub__nav-left-part">
             <div className="sub__nav-branding">
-              <button
-                className="main__header-hamburger-button simple-button flex-row space-evenly"
-                style={{ display: "none" }}
-              >
+              <button className="main__header-hamburger-button simple-button flex-row space-evenly">
                 <span className="header-menu-burger">
                   <span className="header-menu-burger-bun header-menu-burger-bun--top" />
                   <span className="header-menu-burger-meat" />
                   <span className="header-menu-burger-bun header-menu-burger-bun--bottom" />
                 </span>
+                <div>
+                  <span className="smaller-text">MENU</span>
+                </div>
               </button>
               <div className="sub__nav-branding-message">
                 <span className="smaller-text">EAT DRINK , ENJOY</span>
@@ -34,9 +29,11 @@ class StickyNav extends React.Component {
           </div>
           <div className="sub__nav-mid-part">
             <div>
-              <button className="simple-button">
-                <small>MENU</small>
-              </button>
+              <Scroll type="class" element="food__sub-nav">
+                <button className="simple-button">
+                  <small>MENU</small>
+                </button>
+              </Scroll>
             </div>
             <div className="reservations-option">
               <button className="simple-button">

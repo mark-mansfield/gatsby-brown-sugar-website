@@ -17,6 +17,7 @@ class Food extends React.PureComponent {
   }
 
   clearComponents(ref) {
+    console.log(ref)
     this.setState({
       breakfast: false,
       brunch: false,

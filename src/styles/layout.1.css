@@ -273,6 +273,34 @@ svg {
 #nav {
   display: none;
 }
+
+#main__header-top-bar.alt {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+/* sub nav class path gets activated by the .alt */
+#sub__nav.alt .sub__nav-right-part {
+  display: flex;
+  align-items: center;
+}
+#sub__nav.alt .sub__nav-left-part .sub__nav-branding {
+  display: flex;
+  align-items: center;
+}
+
+#sub__nav.hidden .sub__nav-left-part .sub__nav-branding > button {
+  display: none;
+}
+
 /* basic layout definitions  */
 .flex_row {
   display: flex;
@@ -314,8 +342,8 @@ svg {
   padding-top: 100px;
 }
 
-.minViewPortHeight {
-  min-height: 80vh;
+.min-viewport-height {
+  min-height: 100vh;
 }
 
 /* alignment classes */
@@ -450,7 +478,7 @@ svg {
   }
 
   .sub__nav-right-part {
-    display: flex;
+    display: none;
   }
 
   .gift-card-option {
@@ -472,17 +500,17 @@ svg {
     display: block;
   }
 
-  #nav.alt {
+  #sub__nav.alt {
     position: fixed;
     top: 0;
-    padding: 0.5em 1em;
-    background-color: rgba(247, 247, 247, 0.95);
+    background-color: white;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
   }
 
   #nav > ul {
@@ -519,7 +547,7 @@ svg {
 /* adjust the sub nav to show all options */
 @media (min-width: 67rem) {
   .sub__nav-right-part {
-    display: flex;
+    display: none;
   }
 
   .contact-option,

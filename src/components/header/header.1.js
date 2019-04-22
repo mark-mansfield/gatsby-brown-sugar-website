@@ -45,7 +45,7 @@ class Header extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-          <Scroll type="id" element="menu__navigation">
+          <Scroll type="class" element="food__sub-nav">
             <ListItem button key="menu">
               <ListItemText primary="Menu" />
             </ListItem>
@@ -55,12 +55,14 @@ class Header extends React.Component {
         <List>
           <ListItem>
             <div className="phone_number">PH: (02) 9130 1566</div>
+            {/* eslint-disable jsx-a11y/anchor-has-content */}
             <a
               href="tel:0291301566"
               id="call_now_button"
               title="call now"
               aria-label="call us button"
             />
+            &nbsp;
           </ListItem>
         </List>
         <List>
@@ -78,7 +80,14 @@ class Header extends React.Component {
     )
     return (
       <header className="main__header">
-        <div className="main__header-top-bar">
+        <div
+          id="main__header-top-bar"
+          className={
+            this.props.sticky
+              ? "main__header-top-bar alt"
+              : "main__header-top-bar"
+          }
+        >
           <div className="main__header-left-part">
             <button
               className="main__header-hamburger-button simple-button flex-row space-evenly"

@@ -38,7 +38,7 @@ main {
  */
 
 h1 {
-  font-size: 2em;
+  font-size: 3em;
   margin: 0.67em 0;
 }
 
@@ -205,6 +205,17 @@ button,
   -webkit-appearance: button;
 }
 
+/* because we use buttons that are styled as anchors */
+.button-link {
+  -webkit-appearance: menulist-text !important;
+  appearance: menulist-text !important;
+  padding: 0;
+  position: relative;
+  top: -2px;
+  text-decoration: underline;
+  color: #444;
+  font-weight: bolder;
+}
 /**
  * Remove the inner border and padding in Firefox.
  */

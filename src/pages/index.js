@@ -1,11 +1,14 @@
 import React from "react"
 import Helmet from "react-helmet"
 import Modal from "react-modal"
+import Carousel from "../components/image-carousel/carousel"
+import Waypoint from "react-waypoint"
 import Layout from "../components/layout/layout.1"
 import Header from "../components/header/header.1"
 import SubNav from "../components/navigation/sub__nav"
 import GoogleMap from "../components/google_maps/map"
-// import Food from "../components/menus/food/food"
+import Food from "../components/menus/food/food.1"
+
 // import Drinks from "../components/menus/drinks/drinks"
 // import ContactForm from "../components/contact/contact"
 import Reservation from "../components/reservation/reservation"
@@ -14,11 +17,13 @@ import Reservation from "../components/reservation/reservation"
 import { MdClose } from "react-icons/md"
 
 Modal.setAppElement("#___gatsby")
+
 class Index extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      stickyNav: false,
+      stickySubNav: false,
+      stickyMobileNav: false,
       modalIsOpen: false,
       showAllTimes: false,
       showMaps: false,
@@ -33,12 +38,20 @@ class Index extends React.Component {
     )
   }
 
-  _handleWaypointEnter = () => {
-    this.setState(() => ({ stickyNav: false }))
+  _handleMobileNavWaypointEnter = () => {
+    this.setState(() => ({ stickyMobileNav: false }))
   }
 
-  _handleWaypointLeave = () => {
-    this.setState(() => ({ stickyNav: true }))
+  _handleMobileNavWaypointLeave = () => {
+    this.setState(() => ({ stickyMobileNav: true }))
+  }
+
+  _handleSubNavWaypointEnter = () => {
+    this.setState(() => ({ stickySubNav: false }))
+  }
+
+  _handleSubNavWaypointLeave = () => {
+    this.setState(() => ({ stickySubNav: true }))
   }
 
   _handleShowModal = () => {
@@ -65,18 +78,17 @@ class Index extends React.Component {
 
     // console.log(this.state.showMaps)
     if (this.state.showMaps) {
-      this.setState({
-        dynamicClassNameList: (this.state.dynamicClassNameList =
-          "map-invisible"),
-      })
+      this.setState({ dynamicClassNameList: "" })
     } else {
       this.setState({
-        dynamicClassNameList: (this.state.dynamicClassNameList = "map-visible"),
+        dynamicClassNameList: "map-visible",
       })
     }
   }
 
   render() {
+    // is scrolling feature
+
     // modal styling
     // transition styling found in ../styles/global.css
     const style = {
@@ -108,16 +120,20 @@ class Index extends React.Component {
       { label: "sun", time: "11am -10:30pm" },
     ]
 
-    const dynamicClassNames = [
-      "section__details-column",
-      this.state.dynamicClassNameList,
-    ]
+    const dynamicClassNames = [this.state.dynamicClassNameList]
+
     return (
       <Layout>
         <Helmet title="Brown Sugar - v2" />
-
-        <Header modalState={this._handleShowModal.bind(this)} />
-
+        <Header
+          modalState={this._handleShowModal.bind(this)}
+          sticky={this.state.stickySubNav}
+        />
+        <Waypoint
+          scrollableAncestor={window}
+          onEnter={this._handleMobileNavWaypointEnter}
+          onLeave={this._handleMobileNavWaypointLeave}
+        />
         <Modal
           closeTimeoutMS={300}
           style={style}
@@ -141,78 +157,81 @@ class Index extends React.Component {
           <Reservation />
         </Modal>
         <SubNav
-          sticky={this.state.stickyNav}
+          sticky={this.state.stickySubNav}
           modalState={this._handleShowModal.bind(this)}
         />
-        <section id="overview">
+        <Waypoint
+          scrollableAncestor={window}
+          onEnter={this._handleSubNavWaypointEnter}
+          onLeave={this._handleSubNavWaypointLeave}
+        />
+        <section id="overview" className="venue-details">
           <div className="page_section container">
-            <div className="page-section-wrapper">
-              <div className="page-section-inner">
+            <div className="page_section-wrapper">
+              <div className={"page_section-inner " + dynamicClassNames}>
                 <div className="section__details">
                   {/* open hours */}
-                  {!this.state.showMaps && (
-                    <div className="section__details-column">
-                      <div className="section__details-column_title">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          version="1.1"
-                          id="Layer_1"
-                          x="0px"
-                          y="0px"
-                          viewBox="0 0 45.6 45.6"
-                        >
-                          <g>
-                            <path d="M22.8,45.6C10.2,45.6,0,35.4,0,22.8S10.2,0,22.8,0s22.8,10.2,22.8,22.8S35.4,45.6,22.8,45.6z M22.8,3C11.9,3,3,11.9,3,22.8   s8.9,19.8,19.8,19.8s19.8-8.9,19.8-19.8S33.7,3,22.8,3z" />
-                            <polygon points="22.8,24.1 22.8,12.6 19.8,12.6 19.8,25.5 19.8,25.5 19.8,25.5 28.4,33 30.2,30.7  " />
-                          </g>
-                        </svg>
-                        <span>OPEN HOURS</span>
-                      </div>
-                      <div className="section__details-column-inner">
-                        <div className="section__details-times">
-                          <p className="section_details-times-row">
-                            <strong>Today</strong>
-                            <span>11:30 am - 12:00 am</span>
-                          </p>
-                          {this.state.showAllTimes && (
-                            <div className="more-times">
-                              {openTimes.map(function(d, index) {
-                                return (
-                                  <div>
-                                    <li
-                                      style={{ listStyleType: "none" }}
-                                      key={d.label}
-                                    >
-                                      {d.label + ":" + d.time}
-                                    </li>
-                                  </div>
-                                )
-                              })}
-                            </div>
-                          )}
-                          {!this.state.showAllTimes && (
-                            <button
-                              className="cta cta--small cta--down"
-                              onClick={this.toggleTimesVisibility}
-                            >
-                              <span className="cta-text">Show more</span>
-                            </button>
-                          )}
-                          {this.state.showAllTimes && (
-                            <button
-                              className="cta cta--small cta--down"
-                              onClick={this.toggleTimesVisibility}
-                            >
-                              <span className="cta-text">Show less</span>
-                            </button>
-                          )}
-                        </div>
+
+                  <div className="section__details-column">
+                    <div className="section__details-column_title">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                        id="Layer_1"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 45.6 45.6"
+                      >
+                        <g>
+                          <path d="M22.8,45.6C10.2,45.6,0,35.4,0,22.8S10.2,0,22.8,0s22.8,10.2,22.8,22.8S35.4,45.6,22.8,45.6z M22.8,3C11.9,3,3,11.9,3,22.8   s8.9,19.8,19.8,19.8s19.8-8.9,19.8-19.8S33.7,3,22.8,3z" />
+                          <polygon points="22.8,24.1 22.8,12.6 19.8,12.6 19.8,25.5 19.8,25.5 19.8,25.5 28.4,33 30.2,30.7  " />
+                        </g>
+                      </svg>
+                      <span>OPEN HOURS</span>
+                    </div>
+                    <div className="section__details-column-inner">
+                      <div className="section__details-times">
+                        <p className="section_details-times-row">
+                          <strong>Today : </strong>
+                          <span>11:30 am - 12:00 am</span>
+                        </p>
+                        {this.state.showAllTimes && (
+                          <div className="more-times">
+                            {openTimes.map(function(d, index) {
+                              return (
+                                <div>
+                                  <li
+                                    style={{ listStyleType: "none" }}
+                                    key={d.label}
+                                  >
+                                    <strong>{d.label}</strong> : {d.time}
+                                  </li>
+                                </div>
+                              )
+                            })}
+                          </div>
+                        )}
+                        {!this.state.showAllTimes && (
+                          <button
+                            className="cta cta--small cta--down"
+                            onClick={this.toggleTimesVisibility}
+                          >
+                            <span className="cta-text">Show more</span>
+                          </button>
+                        )}
+                        {this.state.showAllTimes && (
+                          <button
+                            className="cta cta--small cta--down"
+                            onClick={this.toggleTimesVisibility}
+                          >
+                            <span className="cta-text">Show less</span>
+                          </button>
+                        )}
                       </div>
                     </div>
-                  )}
-                  {/* location */}
-                  {/* className is now dynamic */}
-                  <div className={dynamicClassNames.join(" ")}>
+                  </div>
+
+                  <div className="section__details-column section__details-column--location">
                     <div className="section__details-column_title">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -258,98 +277,163 @@ class Index extends React.Component {
                       )}
                     </div>
                   </div>
-                  {/* contact us  */}
-                  {!this.state.showMaps && (
-                    <div className="section__details-column">
-                      <div className="section__details-column_title">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          version="1.1"
-                          id="Layer_1"
-                          x="0px"
-                          y="0px"
-                          viewBox="0 0 38.6 38.6"
-                        >
-                          <path d="M30.6,2.4V0h-3v2.4H11V0H8v2.4H0v13.1v23.2h26.4v0l12.2-12.2l0,0h0v-11V2.4H30.6z M26.4,34.3v-7.9h7.9L26.4,34.3z   M35.6,23.4H23.4v12.2H3V15.5h32.5V23.4z M35.6,12.4H3v-7H8v2.4h3V5.4h16.5v2.4h3V5.4h5V12.4z" />
-                        </svg>
-                        <span>CONTACT US</span>
-                      </div>
-                      <div className="section__details-column-inner">
-                        <p>Bookings &amp; Enquiries</p>
-                        <a href="tel:+61 2 91301566">+61 2 91301566</a>
-                      </div>
-                    </div>
-                  )}
 
-                  {/* walk-ins message */}
-                  {!this.state.showMaps && (
-                    <div className="section__details-column">
-                      <div className="section__details-column_title">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          version="1.1"
-                          id="Layer_1"
-                          x="0px"
-                          y="0px"
-                          viewBox="0 0 55.3 43.7"
-                        >
-                          <g>
-                            <rect y="40.7" width="55.3" height="3" />
-                            <path d="M54.6,34.8c0-14.4-11.3-26.3-25.5-27.1V3h5.6V0H20.5v3h5.6v4.6C11.8,8.3,0.3,20.2,0.3,34.8v1.5h54.4V34.8z M3.3,33.3   c0.8-12.6,11.3-22.7,24.1-22.7s23.4,10,24.1,22.7H3.3z" />
-                          </g>
-                        </svg>
-                        <span>WALK-INS WELCOME</span>
-                      </div>
-                      <div className="section__details-column-inner">
-                        <p>
-                          Whilst we do cater for walk-ins, reservations are
-                          available for dinner from 6pm onwards and are
-                          recommended for weekends and summertime. We take
-                          reservations for lunch on Friday, Saturday and Sundays
-                          from midday. Book &nbsp;
-                          <a
-                            onClick={this._handleShowModal}
-                            style={{ textDecoration: "underline" }}
-                          >
-                            online
-                          </a>{" "}
-                          &nbsp;or please give us a call and one of our staff
-                          will be more than happy to help you.
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                  {this.state.showMaps && (
-                    <div className="section__details-location">
-                      <div className="section__details-info">
-                        <div className="section__details-info-inner">
-                          <h4>Getting There</h4>
-                          <div className="section__details-info-inner-content">
-                            Located on the corner of Bondi Rd. and Denham St.,
-                            there is plenty of street parking on Denham St. near
-                            the main entrance of The Bottle Shop.
-                            <br />
-                            <br />
-                            By Car By Public Transport
-                            <br />
-                            The closest station is Bondi Junction. Take the
-                            train from Martin Place station to Bondi Junction.
-                            From the station proceed to Stand A where you can
-                            then catch the 380 bus to Bondi Rd. at Castle St.
-                          </div>
+                  <div className="section__details-location">
+                    <div className="section__details-info">
+                      <div className="section__details-info-inner">
+                        <h4>Getting There</h4>
+                        <div className="section__details-info-inner-content">
+                          Located on the corner of Bondi Rd. and Denham St.,
+                          there is plenty of street parking on Denham St. near
+                          the main entrance of The Bottle Shop.
+                          <br />
+                          <br />
+                          By Car By Public Transport
+                          <br />
+                          The closest station is Bondi Junction. Take the train
+                          from Martin Place station to Bondi Junction. From the
+                          station proceed to Stand A where you can then catch
+                          the 380 bus to Bondi Rd. at Castle St.
                         </div>
                       </div>
-                      <div className="section__details-map">
-                        <GoogleMap />
+                    </div>
+
+                    <div className="section__details-map">
+                      <GoogleMap />
+                    </div>
+                  </div>
+                  {/* contact us  */}
+
+                  <div className="section__details-column">
+                    <div className="section__details-column_title">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                        id="Layer_1"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 38.6 38.6"
+                      >
+                        <path d="M30.6,2.4V0h-3v2.4H11V0H8v2.4H0v13.1v23.2h26.4v0l12.2-12.2l0,0h0v-11V2.4H30.6z M26.4,34.3v-7.9h7.9L26.4,34.3z   M35.6,23.4H23.4v12.2H3V15.5h32.5V23.4z M35.6,12.4H3v-7H8v2.4h3V5.4h16.5v2.4h3V5.4h5V12.4z" />
+                      </svg>
+                      <span>CONTACT US</span>
+                    </div>
+                    <div className="section__details-column-inner">
+                      <p>Bookings &amp; Enquiries</p>
+                      <a href="tel:+61 2 91301566">+61 2 91301566</a>
+                    </div>
+                  </div>
+                  {/* )} */}
+
+                  {/* walk-ins message */}
+                  <div className="section__details-column">
+                    <div className="section__details-column_title">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                        id="Layer_1"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 55.3 43.7"
+                      >
+                        <g>
+                          <rect y="40.7" width="55.3" height="3" />
+                          <path d="M54.6,34.8c0-14.4-11.3-26.3-25.5-27.1V3h5.6V0H20.5v3h5.6v4.6C11.8,8.3,0.3,20.2,0.3,34.8v1.5h54.4V34.8z M3.3,33.3   c0.8-12.6,11.3-22.7,24.1-22.7s23.4,10,24.1,22.7H3.3z" />
+                        </g>
+                      </svg>
+                      <span>WALK-INS WELCOME</span>
+                    </div>
+                    <div className="section__details-column-inner">
+                      <p>
+                        Whilst we do cater for walk-ins, reservations are
+                        available for dinner from 6pm onwards. We take
+                        reservations for lunch on Friday, Saturday and Sundays
+                        from midday. Book &nbsp;
+                        <button
+                          title="open reservation calendar"
+                          tabIndex="0"
+                          onClick={this._handleShowModal}
+                          className="button-link"
+                        >
+                          online
+                        </button>
+                        &nbsp;or please give us a call and one of our staff will
+                        be more than happy to help you.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* <div
+                    className="section__details-location"
+                    style={{ display: "none" }}
+                  >
+                    <div className="section__details-info">
+                      <div className="section__details-info-inner">
+                        <h4>Getting There</h4>
+                        <div className="section__details-info-inner-content">
+                          Located on the corner of Bondi Rd. and Denham St.,
+                          there is plenty of street parking on Denham St. near
+                          the main entrance of The Bottle Shop.
+                          <br />
+                          <br />
+                          By Car By Public Transport
+                          <br />
+                          The closest station is Bondi Junction. Take the train
+                          from Martin Place station to Bondi Junction. From the
+                          station proceed to Stand A where you can then catch
+                          the 380 bus to Bondi Rd. at Castle St.
+                        </div>
                       </div>
                     </div>
-                  )}
-                  <div className="page_section-border font_title" />
+
+                    <div className="section__details-map">
+                      <GoogleMap />
+                    </div>
+                  </div> */}
                 </div>
+              </div>
+              <div className="page__section-border" />
+            </div>
+          </div>
+        </section>
+
+        <section id="message" className="page__section container">
+          <div className="page_section container">
+            <div className="section__details">
+              <h3
+                style={{
+                  width: "80%",
+                  textAlign: "center",
+                  letterSpacing: ".09333em",
+                }}
+              >
+                Our philosophy is simple: we endeavour to bring a small slice of
+                the Mediterranean to Bondi Beach with creative, ethical and
+                seasonal menu offerings.
+              </h3>
+            </div>
+          </div>
+        </section>
+        <Carousel />
+        <section id="about_us" className="page_section container">
+          <div className="page_section container">
+            <div className="section__details">
+              <div>
+                <h1>About Us</h1>
+              </div>
+
+              <div className="section__details-info-inner-content font-scheme ">
+                A relaxed, contemporary neighbourhood bistro run by dedicated
+                industry professionals committed to delivering a memorable
+                dining (and wining) experience. Brother and sister duo Neil
+                &amp; Lianne Gottheiner have created a unique Bondi institution
+                with a vibrant, welcoming ambience catering for diners of all
+                persuasions.
               </div>
             </div>
           </div>
         </section>
+        <Food />
       </Layout>
     )
   }

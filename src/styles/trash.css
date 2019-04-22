@@ -1,0 +1,272 @@
+section-details {
+  display: block;
+}
+section-details .page_section {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+section-details .page_section-inner {
+  position: relative;
+  padding-bottom: 2.75rem;
+  padding-top: 2.75rem;
+}
+@media screen and (min-width: 37.5em) {
+  section-details .page_section-inner {
+    padding-bottom: 4.5625rem;
+    padding-top: 3.9375rem;
+  }
+}
+.section_details {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 0;
+}
+@media screen and (min-width: 64em) {
+  .section_details--2 .section_details-column {
+    width: 50%;
+    max-width: 50%;
+  }
+  .section_details--3 .section_details-column {
+    width: 33%;
+    max-width: 33%;
+  }
+}
+@media screen and (min-width: 37.5em) {
+  .section_details {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0 4.5rem;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+  }
+}
+.section_details-column {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  z-index: 1;
+  margin-top: 3.5rem;
+}
+.section_details-column:first-child {
+  margin-top: 0;
+}
+@media screen and (max-width: 64em) {
+  .section_details-column {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+}
+@media screen and (min-width: 37.5em) {
+  .section_details-column {
+    position: static;
+  }
+}
+@media screen and (min-width: 64em) {
+  .section_details-column {
+    padding-right: 1rem;
+    width: 100%;
+    width: 25%;
+    max-width: 25%;
+    box-sizing: border-box;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 48em) {
+  .map-visible .section_details-column {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media screen and (min-width: 78.75em) {
+  .section_details-column--location p {
+    max-width: 60%;
+  }
+}
+.map-visible .section_details-column--location {
+  opacity: 1;
+  visibility: visible;
+}
+@media screen and (min-width: 64em) {
+  .map-visible .section_details-column--location:nth-child(2) {
+    transform: translate3d(-100%, 0%, 0);
+  }
+  .map-visible .section_details-column--location:nth-child(3) {
+    transform: translate3d(-200%, 0%, 0);
+  }
+  .map-visible .section_details-column--location:nth-child(4) {
+    transform: translate3d(-300%, 0%, 0);
+  }
+}
+@media screen and (max-width: 64em) {
+  .section_details-column--location .location_link {
+    display: inline-block !important;
+  }
+}
+.section_details-column--location .cta {
+  display: none;
+}
+.section_details-column--location .cta.is-visible {
+  display: inline-block;
+}
+@media screen and (max-width: 64em) {
+  .section_details-column--location .cta--back {
+    display: none !important;
+  }
+}
+.section_details-column p {
+  font-size: 0.9375rem;
+  line-height: 1.46667;
+  margin-bottom: 0;
+}
+.section_details-column .cta {
+  margin-top: 1.5rem;
+}
+.section_details-column_title {
+  -ms-flex-align: start;
+  align-items: flex-start;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: bold;
+  letter-spacing: 0.07143em !important;
+  line-height: 1.28571;
+  text-transform: uppercase;
+  margin-bottom: 1.875rem;
+}
+.section_details-column_title-icon {
+  width: 1rem;
+  max-height: 1.875rem;
+  margin-right: 0.75rem;
+  fill: currentColor;
+  vertical-align: top;
+}
+.section_details-location {
+  display: none;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(75% - 4rem);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.map-visible .section_details-location {
+  opacity: 1;
+  visibility: visible;
+}
+@media screen and (min-width: 64em) {
+  .section_details-location {
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.section_details-info {
+  height: 100%;
+  position: relative;
+  width: 55%;
+  overflow: hidden;
+  padding-top: 0.0625rem;
+}
+.section_details-info-inner {
+  -webkit-overflow-scrolling: touch;
+  height: auto;
+  overflow: visible;
+  padding: 3.9375rem 2rem 2rem 0;
+}
+.section_details-info-title {
+  margin-bottom: 1.75rem;
+  font-weight: bold;
+}
+.venue_detauls-info-content {
+  font-size: 0.9375rem;
+  line-height: 1.46667;
+}
+.venue_detauls-info-content p:last-child {
+  margin-bottom: 0;
+}
+.venue_detauls-info-content * {
+  font-size: inherit;
+  line-height: inherit;
+}
+.section_details-map {
+  height: 100%;
+  width: 45%;
+}
+.section_details-times > p {
+  display: none;
+}
+.section_details-times > p:first-child {
+  display: block;
+}
+.section_details-times > p.section_details-times-row--opening {
+  margin-bottom: 1rem;
+}
+.section_details-times[data-total="<=2"] > p {
+  display: block;
+}
+.section_details-times.is-open > p {
+  display: block;
+}
+.map-visible .display-map {
+  display: none;
+}
+@media screen and (max-width: 64em) {
+  .map-visible .section_details-location-small {
+    display: block;
+  }
+}
+.section_details-column-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  margin: 0;
+  box-shadow: none;
+  padding: 0;
+}
+.section_details-location-small {
+  display: none;
+  margin: 2rem 0 0;
+}
+.section_details-location-small .section_details-column_title {
+  margin: 0 0 2rem;
+}
+.section_details-location-small .venue_detauls-info-content {
+  font-size: 0.9375rem;
+  line-height: 1.46667;
+}
+.section_details-map-small {
+  height: 16.875rem;
+  margin: 2rem 0 0;
+}
+.section_details-column-border_top,
+.section_details-column-border_bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0.3;
+  border-bottom: 1px solid;
+  border-color: currentColor;
+}
+@media screen and (min-width: 37.5em) {
+  .section_details-column-border_top,
+  .section_details-column-border_bottom {
+    display: none;
+  }
+}
+.section_details-column-border_top {
+  top: 0;
+}
+.section_details-column-border_bottom {
+  bottom: 0;
+}

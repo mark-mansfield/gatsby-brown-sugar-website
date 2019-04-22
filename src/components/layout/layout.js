@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Button from "@material-ui/core/Button"
 import Scroll from "../Scroll"
 /* eslint-disable import/first */
 import { withStyles } from "@material-ui/core/styles"
@@ -66,6 +65,7 @@ class Template extends React.Component {
         <List>
           <ListItem>
             <div className="phone_number">PH: (02) 9130 1566</div>
+            {/* eslint-disable jsx-a11y/anchor-has-content */}
             <a href="tel:0291301566" id="call_now_button" />
           </ListItem>
         </List>
