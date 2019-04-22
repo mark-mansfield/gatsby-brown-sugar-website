@@ -1,5 +1,5 @@
 import React from "react"
-
+import Disclaimer from "./foddDiscalimer"
 const breakfast = () => {
   return (
     <div className="venue_menus-list">
@@ -381,6 +381,7 @@ const breakfast = () => {
           </div>
         </div>
       </div>
+      <Disclaimer />
     </div>
   )
 }

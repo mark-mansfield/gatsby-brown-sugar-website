@@ -167,6 +167,19 @@ button.cta:after {
   height: 14rem;
 }
 
+@media (min-width: 48rem) {
+  .page_cta--sticky {
+    display: block;
+    position: fixed;
+    bottom: 0.625rem;
+    right: 0.625rem;
+    height: 3rem;
+    z-index: 50;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
 @media (min-width: 46rem) {
   .scroll-top-top {
     display: none;
@@ -201,10 +214,16 @@ button.cta:after {
     letter-spacing: 0.02rem;
   }
 
+  #overview .section__details-column p,
+  #overview .section__details-column li,
+  #overview .section__details-info-inner-content {
+    font-size: var(--font-scheme-small);
+  }
+
   .section__details-column p,
   .section__details-column li,
   .section__details-info-inner-content {
-    font-size: 75%;
+    font-size: var(--font-scheme-regular);
   }
 
   .section__details-location {

@@ -5,6 +5,8 @@
 :root {
   --default-px-font-size: 16px;
   --default-rem-font-size: 1rem;
+  --font-scheme-regular: calc(var(--default-rem-font-size) + 0.1rem);
+  --font-scheme-small: 75%;
 }
 
 html {
@@ -18,9 +20,6 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1.5;
   color: rgba(16, 24, 32, 0.5);
-}
-.font-scheme {
-  font-size: calc(var(--default-rem-font-size) + 0.2rem);
 }
 
 h1,

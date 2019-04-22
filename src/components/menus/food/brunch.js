@@ -1,5 +1,5 @@
 import React from "react"
-
+import Disclaimer from "./foddDiscalimer"
 const brunch = () => {
   return (
     <div className="venue_menus-list min-viewport-height">
@@ -163,6 +163,7 @@ const brunch = () => {
           </div>
         </div>
       </div>
+      <Disclaimer />
     </div>
   )
 }

@@ -14,33 +14,35 @@ const flickityOptions = {
 
 function Carousel() {
   return (
-    <Flickity options={flickityOptions}>
-      <img
-        className="images_gallery_slider-image"
-        src="https://placeimg.com/640/480/animals"
-        alt=""
-      />
-      <img
-        className="images_gallery_slider-image"
-        src="https://placeimg.com/640/480/nature"
-        alt=""
-      />
-      <img
-        className="images_gallery_slider-image"
-        src="https://placeimg.com/640/480/architecture"
-        alt=""
-      />
-      <img
-        className="images_gallery_slider-image"
-        src="https://placeimg.com/640/480/architecture"
-        alt=""
-      />
-      <img
-        className="images_gallery_slider-image"
-        src="https://placeimg.com/640/480/architecture"
-        alt=""
-      />
-    </Flickity>
+    <div>
+      <Flickity options={flickityOptions}>
+        <img
+          className="images_gallery_slider-image"
+          src="https://placeimg.com/640/480/animals"
+          alt=""
+        />
+        <img
+          className="images_gallery_slider-image"
+          src="https://placeimg.com/640/480/nature"
+          alt=""
+        />
+        <img
+          className="images_gallery_slider-image"
+          src="https://placeimg.com/640/480/architecture"
+          alt=""
+        />
+        <img
+          className="images_gallery_slider-image"
+          src="https://placeimg.com/640/480/architecture"
+          alt=""
+        />
+        <img
+          className="images_gallery_slider-image"
+          src="https://placeimg.com/640/480/architecture"
+          alt=""
+        />
+      </Flickity>
+    </div>
   )
 }
 export default Carousel
