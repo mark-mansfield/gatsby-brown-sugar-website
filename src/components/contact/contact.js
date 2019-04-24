@@ -98,14 +98,14 @@ const Contact = () => {
               )}
               <button
                 type="button"
-                className="form-button"
+                className="form-button-accent"
                 onClick={handleReset}
                 disabled={!dirty || isSubmitting}
               >
                 Reset
               </button>
               <button
-                className="form-button"
+                className="form-button-accent"
                 type="submit"
                 disabled={isSubmitting}
               >
