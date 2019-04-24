@@ -40,3 +40,14 @@ label {
   color: dodgerblue;
   margin-top: 0.25rem;
 }
+
+button.form-button-accent {
+  margin-right: 10px;
+  background-color: #e813c1;
+  color: white;
+}
+
+button.form-button-accent:hover {
+  background-color: #ff00cf26;
+  color: white;
+}
