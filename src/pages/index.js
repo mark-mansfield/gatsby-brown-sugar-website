@@ -20,7 +20,7 @@ import Contact from "../components/contact/contact"
 // import Drinks from "../components/menus/drinks/drinks"
 // import ContactForm from "../components/contact/contact"
 import Reservation from "../components/reservation/reservation"
-
+import GiftCards from "../components/giftCards/giftCards"
 // https://react-icons.netlify.com/#/icons/md
 import { MdClose } from "react-icons/md"
 
@@ -274,8 +274,8 @@ class Index extends React.Component {
               <MdClose className="modal__close" />
             </div>
           </div>
-          <h2 style={{ color: "white" }}>Gift Cards</h2>
-          <br />
+
+          <GiftCards />
         </Modal>
         <Drawer
           open={this.state.left}
@@ -293,6 +293,7 @@ class Index extends React.Component {
         <SubNav
           sticky={this.state.stickySubNav}
           modalState={this._handleShowModal.bind(this)}
+          giftCardModalState={this._handleShowGiftCardModal.bind(this)}
           sideDrawerState={this.toggleDrawer}
         />
         <Waypoint

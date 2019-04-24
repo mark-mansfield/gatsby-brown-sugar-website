@@ -36,21 +36,28 @@ class StickyNav extends React.Component {
               </button>
             </div>
             <div className="groups-option">
-              <button className="simple-button">
-                <small>GROUPS</small>
-              </button>
+              <Scroll type="id" element="groups">
+                <button className="simple-button">
+                  <small>GROUPS</small>
+                </button>
+              </Scroll>
             </div>
             <div className="contact-option">
-              <button className="simple-button">
-                <small>CONTACT</small>
-              </button>
+              <Scroll type="id" element="contact">
+                <button className="simple-button">
+                  <small>CONTACT</small>
+                </button>
+              </Scroll>
             </div>
           </div>
           <div className="sub__nav-right-part">
             <div className="sub__nav-utilities-wrapper">
               <div className="sub__nav-utilities">
                 <div className="sub__nav-utilities-cell--gift-card">
-                  <button className="button gift-card-option ">
+                  <button
+                    className="button gift-card-button"
+                    onClick={this.props.giftCardModalState.bind(this)}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 15"
