@@ -13,7 +13,7 @@ const scrollToTop = () => {
       >
         <button className="simple-button">
           <svg
-            enable-background="new 0 0 96 96"
+            enableBackground="new 0 0 96 96"
             height="30px"
             id="arrow_up"
             version="1.1"
