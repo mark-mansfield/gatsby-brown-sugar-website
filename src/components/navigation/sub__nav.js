@@ -30,10 +30,12 @@ class StickyNav extends React.Component {
                 </button>
               </Scroll>
             </div>
-            <div className="reservations-option">
-              <button className="simple-button">
-                <small>RESERVATIONS</small>
-              </button>
+            <div className="reservations">
+              <Scroll type="id" element="reservations">
+                <button className="simple-button">
+                  <small>RESERVATIONS</small>
+                </button>
+              </Scroll>
             </div>
             <div className="groups-option">
               <Scroll type="id" element="groups">
