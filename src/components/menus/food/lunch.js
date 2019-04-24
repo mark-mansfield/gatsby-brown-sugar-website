@@ -1,5 +1,6 @@
 import React from "react"
 import Disclaimer from "./foddDiscalimer"
+import ScrollToMenu from "../../ScrollToTop/scrollToTop"
 const lunch = () => {
   return (
     <div className="venue_menus-list">
@@ -528,6 +529,8 @@ const lunch = () => {
           </div>
         </div>
       </div>
+      <ScrollToMenu />
+
       <Disclaimer />
     </div>
   )
