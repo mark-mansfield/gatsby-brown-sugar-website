@@ -6,7 +6,6 @@ const Reservations = () => {
       <Layout>
         <h1>Reservations</h1>
         <p>
-          {" "}
           Whilst we do cater for walk-ins, reservations are available for dinner
           from 6pm onwards and are recommended for weekends and summertime. We
           take reservations for lunch on Friday, Saturday and Sundays from

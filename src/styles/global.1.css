@@ -69,6 +69,11 @@ button,
   outline: none;
   transition: all 0.2s;
 }
+.button:hover,
+.hamburger-button:hover,
+.gift-card-button:hover {
+  background-color: #d1d1d1;
+}
 
 .button-inverted {
   background-color: transparent;
@@ -76,9 +81,18 @@ button,
 }
 
 button,
-.button:hover,
-span:hover {
+.button:hover {
   cursor: pointer;
+}
+
+button.form-button {
+  margin-right: 10px;
+  background-color: #ff00cf26;
+}
+
+button.form-button:hover {
+  background-color: #e813c1;
+  color: white;
 }
 
 span.button-link {

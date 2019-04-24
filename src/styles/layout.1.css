@@ -42,9 +42,9 @@
 
 #callnowbutton {
   display: block;
-  position: fixed;
+  /* position: fixed; */
   text-decoration: none;
-  z-index: 2147483647;
+  /* z-index: 2147483647; */
   color: white;
   width: 65px;
   height: 60px;
@@ -75,10 +75,11 @@
   justify-content: flex-start;
   align-items: center;
   border-bottom: 0.0425rem solid rgba(55, 56, 57, 0.25);
+  height: auto;
 }
 
-.sub__nav-top-bar {
-  height: 51px;
+.hamburger-button {
+  width: 112px;
 }
 
 .header-menu-burger-bun--top {
@@ -106,7 +107,6 @@
 }
 
 .main__header-branding {
-  width: 250px;
   height: 100%;
   display: flex;
   justify-content: flex-start;
@@ -136,11 +136,22 @@
 
 .sub__nav-left-part {
   min-width: 180px;
+  height: 46px;
+}
+.sub__nav-hamburger-button {
+  display: none;
+}
+#sub__nav.alt .sub__nav-hamburger-button {
+  display: flex;
+  align-items: center;
 }
 
 .sub__nav-branding-message {
   padding-right: 30px;
   border-right: 0.0625rem solid rgba(16, 24, 32, 0.25);
+  align-items: center;
+  display: flex;
+  height: 100%;
 }
 
 .main_header-right-part {
@@ -280,7 +291,9 @@ svg {
   align-items: center;
   width: 100vw;
 }
-
+.sub__nav-branding {
+  width: auto;
+}
 /* sub nav class path gets activated by the .alt */
 #sub__nav.alt .sub__nav-right-part {
   display: flex;
@@ -316,7 +329,6 @@ svg {
   flex-flow: row;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
 }
 
 .flex-col {
@@ -431,26 +443,9 @@ svg {
   .main__header {
     justify-content: center;
   }
-  .main__header-hamburger-button {
-    width: 112px;
-  }
-
-  .button:hover,
-  .main__header-hamburger-button:hover,
-  .gift-card-button:hover {
-    background-color: #d1d1d1;
-  }
 
   .main__header-top-bar {
     flex-flow: row !important;
-  }
-
-  .sub__nav-header-menu-burger {
-    display: none;
-  }
-
-  .sub__nav-branding {
-    width: auto;
   }
 
   .sub__nav-branding > img {
@@ -509,6 +504,9 @@ svg {
     align-items: center;
     width: 100vw;
   }
+  .sub__nav-hamburger-button {
+    display: none;
+  }
 
   #nav > ul {
     width: 60vw;
@@ -541,7 +539,7 @@ svg {
 }
 
 /* Media queries for large screens */
-/* adjust the sub nav to show all options */
+
 @media (min-width: 67rem) {
   .sub__nav-right-part {
     display: none;

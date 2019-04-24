@@ -98,15 +98,15 @@ const Contact = () => {
               )}
               <button
                 type="button"
-                className="simple-button-sml"
+                className="form-button"
                 onClick={handleReset}
                 disabled={!dirty || isSubmitting}
               >
                 Reset
               </button>
               <button
+                className="form-button"
                 type="submit"
-                className="simple-button-sml"
                 disabled={isSubmitting}
               >
                 Submit

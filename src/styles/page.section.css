@@ -192,6 +192,14 @@ button.cta:after {
     justify-content: center;
   }
 
+  .align-top {
+    align-items: start;
+  }
+
+  #contact .section__details {
+    justify-content: space-around;
+  }
+
   .section__details .page_section-inner {
     padding-bottom: 4.5625rem;
     padding-top: 3.9375rem;

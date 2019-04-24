@@ -1,4 +1,5 @@
 import React from "react"
+import Hamburger from "../navigation/hamburgerButton"
 import Scroll from "../Scroll"
 
 class StickyNav extends React.Component {
@@ -11,17 +12,11 @@ class StickyNav extends React.Component {
       <div id="sub__nav" className={this.props.sticky ? "alt" : "hidden"}>
         <div className="sub__nav-top-bar">
           <div className="sub__nav-left-part">
+            <Hamburger
+              className="sub__nav-hamburger-button  hamburger-button simple-button space-evenly"
+              sideDrawerState={this.props.sideDrawerState}
+            />
             <div className="sub__nav-branding">
-              <button className="main__header-hamburger-button simple-button flex-row space-evenly">
-                <span className="header-menu-burger">
-                  <span className="header-menu-burger-bun header-menu-burger-bun--top" />
-                  <span className="header-menu-burger-meat" />
-                  <span className="header-menu-burger-bun header-menu-burger-bun--bottom" />
-                </span>
-                <div>
-                  <span className="smaller-text">MENU</span>
-                </div>
-              </button>
               <div className="sub__nav-branding-message">
                 <span className="smaller-text">EAT DRINK , ENJOY</span>
               </div>

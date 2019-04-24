@@ -1,83 +1,8 @@
 import React from "react"
-import PropTypes from "prop-types"
-
-/* eslint-disable import/first */
-import { withStyles } from "@material-ui/core/styles"
-import Drawer from "@material-ui/core/Drawer"
-import List from "@material-ui/core/List"
-import Divider from "@material-ui/core/Divider"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemText from "@material-ui/core/ListItemText"
+import Hamburger from "../navigation/hamburgerButton"
 import logo from "../../images/logo.v1.svg"
-import Scroll from "../Scroll"
-
-const drawStyles = {
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: "auto",
-  },
-}
-
 class Header extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      left: false,
-    }
-  }
-
-  toggleDrawer = (side, open) => () => {
-    this.setState({
-      [side]: open,
-    })
-  }
-
-  showModal() {
-    this.props.modalState()
-  }
-
   render() {
-    // drawer set up
-    const { classes } = this.props
-
-    const sideList = (
-      <div className={classes.list}>
-        <List>
-          <Scroll type="class" element="food__sub-nav">
-            <ListItem button key="menu">
-              <ListItemText primary="Menu" />
-            </ListItem>
-          </Scroll>
-        </List>
-        <Divider />
-        <List>
-          <ListItem>
-            <div className="phone_number">PH: (02) 9130 1566</div>
-            {/* eslint-disable jsx-a11y/anchor-has-content */}
-            <a
-              href="tel:0291301566"
-              id="call_now_button"
-              title="call now"
-              aria-label="call us button"
-            />
-            &nbsp;
-          </ListItem>
-        </List>
-        <List>
-          {[
-            "106 Curlewis St, Bondi Beach NSW 2026",
-            "Dinner tuesday - Sunday",
-            "Breakfast - Firday to Sunday",
-          ].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </div>
-    )
     return (
       <header className="main__header">
         <div
@@ -89,9 +14,9 @@ class Header extends React.Component {
           }
         >
           <div className="main__header-left-part">
-            <button
+            {/* <button
               className="main__header-hamburger-button simple-button flex-row space-evenly"
-              onClick={this.toggleDrawer("left", true)}
+              onClick={this.props.sideDrawerState("left", true)}
             >
               <span className="header-menu-burger">
                 <span className="header-menu-burger-bun header-menu-burger-bun--top" />
@@ -101,7 +26,11 @@ class Header extends React.Component {
               <div>
                 <span className="smaller-text">MENU</span>
               </div>
-            </button>
+            </button> */}
+            <Hamburger
+              className="main__nav-hamburger-button  hamburger-button simple-button flex-row space-evenly"
+              sideDrawerState={this.props.sideDrawerState}
+            />
             <div className="main__header-branding">
               <img className="main__header-logo" src={logo} alt="logo" />
             </div>
@@ -128,7 +57,7 @@ class Header extends React.Component {
                 <div className="header-utilities-cell--book">
                   <button
                     className="button-inverted"
-                    onClick={this.showModal.bind(this)}
+                    onClick={this.props.modalState.bind(this)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -208,25 +137,11 @@ class Header extends React.Component {
           </div>
         </div>
 
-        <Drawer
-          open={this.state.left}
-          onClose={this.toggleDrawer("left", false)}
-        >
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer("left", false)}
-            onKeyDown={this.toggleDrawer("left", false)}
-          >
-            {sideList}
-          </div>
-        </Drawer>
-
         {/* sticky get shown on mobile devices */}
         <div className="page_cta page_cta--sticky page_cta--dark_scheme">
           <button
             className="button-inverted"
-            onClick={this.showModal.bind(this)}
+            onClick={this.props.modalState.bind(this)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -246,7 +161,8 @@ class Header extends React.Component {
   }
 }
 
-Header.propTypes = {
-  classes: PropTypes.object.isRequired,
-}
-export default withStyles(drawStyles)(Header)
+export default Header
+// Header.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// }
+// export default withStyles(drawStyles)(Header)
