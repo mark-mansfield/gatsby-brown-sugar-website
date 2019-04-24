@@ -17,11 +17,8 @@ import SubNav from "../components/navigation/sub__nav"
 import GoogleMap from "../components/google_maps/map"
 import Food from "../components/menus/food/food.1"
 import Contact from "../components/contact/contact"
-// import Drinks from "../components/menus/drinks/drinks"
-// import ContactForm from "../components/contact/contact"
 import Reservation from "../components/reservation/reservation"
 import GiftCards from "../components/giftCards/giftCards"
-// https://react-icons.netlify.com/#/icons/md
 import { MdClose } from "react-icons/md"
 
 Modal.setAppElement("#___gatsby")
