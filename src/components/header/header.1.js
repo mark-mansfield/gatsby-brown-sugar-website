@@ -14,19 +14,6 @@ class Header extends React.Component {
           }
         >
           <div className="main__header-left-part">
-            {/* <button
-              className="main__header-hamburger-button simple-button flex-row space-evenly"
-              onClick={this.props.sideDrawerState("left", true)}
-            >
-              <span className="header-menu-burger">
-                <span className="header-menu-burger-bun header-menu-burger-bun--top" />
-                <span className="header-menu-burger-meat" />
-                <span className="header-menu-burger-bun header-menu-burger-bun--bottom" />
-              </span>
-              <div>
-                <span className="smaller-text">MENU</span>
-              </div>
-            </button> */}
             <Hamburger
               className="main__nav-hamburger-button  hamburger-button simple-button flex-row space-evenly"
               sideDrawerState={this.props.sideDrawerState}
