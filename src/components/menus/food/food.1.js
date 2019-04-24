@@ -3,7 +3,6 @@ import Breakfast from "./breakfast"
 import Brunch from "./brunch"
 import Lunch from "./lunch"
 import Dinner from "./dinner"
-import Scroll from "../../Scroll"
 class Food extends React.PureComponent {
   constructor(props) {
     super(props)
