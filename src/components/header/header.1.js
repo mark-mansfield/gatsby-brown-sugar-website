@@ -40,7 +40,10 @@ class Header extends React.Component {
             <div className="main__header-utilities-wrapper">
               <div className="header-utilities">
                 <div className="header-utilities-cell--gift-card">
-                  <button className="button gift-card-button">
+                  <button
+                    className="button gift-card-button"
+                    onClick={this.props.giftCardModalState.bind(this)}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 15"

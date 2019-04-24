@@ -42,6 +42,7 @@ class Index extends React.Component {
       stickySubNav: false,
       stickyMobileNav: false,
       modalIsOpen: false,
+      giftCardModalIsOpen: false,
       showAllTimes: false,
       showMaps: false,
       dynamicClassNameList: "",
@@ -80,12 +81,18 @@ class Index extends React.Component {
     })
   }
 
+  _handleShowGiftCardModal = () => {
+    this.setState({
+      giftCardModalIsOpen: true,
+    })
+  }
+
   afterOpenModal() {
     // references are now sync'd and can be accessed.
   }
 
   closeModal() {
-    this.setState({ modalIsOpen: false })
+    this.setState({ modalIsOpen: false, giftCardModalIsOpen: false })
   }
 
   toggleDrawer = (side, open) => () => {
@@ -219,6 +226,7 @@ class Index extends React.Component {
         <Helmet title="Brown Sugar - v2" />
         <Header
           modalState={this._handleShowModal.bind(this)}
+          giftCardModalState={this._handleShowGiftCardModal.bind(this)}
           sticky={this.state.stickySubNav}
           sideDrawerState={this.toggleDrawer}
         />
@@ -248,6 +256,26 @@ class Index extends React.Component {
           </h2>
           <br />
           <Reservation />
+        </Modal>
+
+        <Modal
+          closeTimeoutMS={300}
+          style={style}
+          isOpen={this.state.giftCardModalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          contentLabel="Example Modal"
+        >
+          <div
+            className="modal__toolbar"
+            ref={toolbar => (this.toolbar = toolbar)}
+          >
+            <div ref={close => (this.close = close)} onClick={this.closeModal}>
+              <MdClose className="modal__close" />
+            </div>
+          </div>
+          <h2 style={{ color: "white" }}>Gift Cards</h2>
+          <br />
         </Modal>
         <Drawer
           open={this.state.left}
