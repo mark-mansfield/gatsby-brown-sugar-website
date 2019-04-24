@@ -1,7 +1,7 @@
 import React from "react"
 import { Formik } from "formik"
 import * as Yup from "yup"
-import "./contact.css"
+import "../../styles/forms.css"
 const Contact = () => {
   return (
     <div>
