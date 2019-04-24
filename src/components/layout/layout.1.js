@@ -1,5 +1,5 @@
 import React from "react"
-
+import Footer from "../footer/footer"
 class Template extends React.Component {
   constructor(props) {
     super(props)
@@ -32,6 +32,11 @@ class Template extends React.Component {
     return (
       <div className={`body ${this.state.loading}`}>
         <div id="wrapper">{children}</div>
+        <section id="footer">
+          <div>
+            <Footer />
+          </div>
+        </section>
       </div>
     )
   }
