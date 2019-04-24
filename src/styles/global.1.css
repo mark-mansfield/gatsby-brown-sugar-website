@@ -85,16 +85,6 @@ button,
   cursor: pointer;
 }
 
-button.form-button {
-  margin-right: 10px;
-  background-color: #ff00cf26;
-}
-
-button.form-button:hover {
-  background-color: #e813c1;
-  color: white;
-}
-
 span.button-link {
   padding: none;
   text-decoration: underline;
