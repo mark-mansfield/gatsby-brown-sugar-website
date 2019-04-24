@@ -2,21 +2,49 @@ import React from "react"
 import { Formik } from "formik"
 import * as Yup from "yup"
 import "../../styles/forms.css"
-
+const stylesOveride = {
+  color: "white",
+  display: "block",
+}
 const giftCards = () => {
   return (
     <div>
+      <h1 style={stylesOveride}>Gift Cards</h1>
+      <div style={stylesOveride}>
+        Brown Sugar’s gift vouchers are the perfect way to give a local Bondi
+        dining experience to someone special. They are valid for 12 months from
+        the date of purchase. You can choose to have your gift voucher posted or
+        sent electronically to you or directly to the recipient. Alternatively,
+        vouchers can be collected from the restaurant Tuesday to Thursday from
+        3pm or Friday to Sunday from 8.30am. Please fill in the form and a
+        member of our team will be in contact to process and confirm your
+        purchase.
+      </div>
       <div>
         <Formik
-          initialValues={{ name: "", email: "", message: "" }}
+          initialValues={{
+            recipient: "",
+            name: "",
+            // amount: "",
+            email: "",
+            message: "",
+          }}
           onSubmit={(values, { setSubmitting }) => {
+            console.log(JSON.stringify(values, null, 2))
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2))
               setSubmitting(false)
             }, 500)
           }}
           validationSchema={Yup.object().shape({
+            recipient: Yup.string()
+              .email()
+              .required("Required"),
+
             name: Yup.string().required("Required"),
+
+            // amount: Yup.number().required("Required"),
+
             email: Yup.string()
               .email()
               .required("Required"),
@@ -37,7 +65,27 @@ const giftCards = () => {
             } = props
             return (
               <form onSubmit={handleSubmit}>
-                <label htmlFor="name" style={{ display: "block" }}>
+                <label htmlFor="to" style={stylesOveride}>
+                  To: email address
+                </label>
+                <input
+                  id="recipient"
+                  placeholder="Recipients email"
+                  type="text"
+                  value={values.recipient}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.recipient && touched.recipient
+                      ? "text-input error"
+                      : "text-input"
+                  }
+                />
+                {errors.recipient && touched.recipient && (
+                  <div className="input-feedback">{errors.recipient}</div>
+                )}
+
+                <label htmlFor="name" style={stylesOveride}>
                   Name
                 </label>
                 <input
@@ -56,7 +104,28 @@ const giftCards = () => {
                 {errors.name && touched.name && (
                   <div className="input-feedback">{errors.name}</div>
                 )}
-                <label htmlFor="email" style={{ display: "block" }}>
+
+                <label htmlFor="name" style={stylesOveride}>
+                  Amount
+                </label>
+                <input
+                  id="amount"
+                  placeholder="Amount $"
+                  type="text"
+                  value={values.amount}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.amount && touched.amount
+                      ? "text-input error"
+                      : "text-input"
+                  }
+                />
+                {errors.amount && touched.amount && (
+                  <div className="input-feedback">{errors.amount}</div>
+                )}
+
+                <label htmlFor="email" style={stylesOveride}>
                   Email
                 </label>
                 <input
@@ -75,7 +144,8 @@ const giftCards = () => {
                 {errors.email && touched.email && (
                   <div className="input-feedback">{errors.email}</div>
                 )}
-                <label htmlFor="message" style={{ display: "block" }}>
+
+                <label htmlFor="message" style={stylesOveride}>
                   Message
                 </label>
                 <textarea
@@ -83,7 +153,6 @@ const giftCards = () => {
                   component="textarea"
                   placeholder="enter your enquiry"
                   type="text"
-                  style={{ display: "block" }}
                   value={values.message}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -100,14 +169,14 @@ const giftCards = () => {
                 )}
                 <button
                   type="button"
-                  className="form-button"
+                  className="form-button-accent"
                   onClick={handleReset}
                   disabled={!dirty || isSubmitting}
                 >
                   Reset
                 </button>
                 <button
-                  className="form-button"
+                  className="form-button-accent"
                   type="submit"
                   disabled={isSubmitting}
                 >
