@@ -49,22 +49,6 @@ class Food extends React.PureComponent {
     }
   }
 
-  componentDidMount() {
-    this.prev = window.scrollY
-    window.addEventListener("scroll", e => this.handleNavigation(e))
-  }
-
-  handleNavigation = e => {
-    const window = e.currentTarget
-
-    if (this.prev > window.scrollY) {
-      this.setState({ scrollingUp: true })
-    } else if (this.prev < window.scrollY) {
-      this.setState({ scrollingUp: false })
-    }
-    this.prev = window.scrollY
-  }
-
   render() {
     const { breakfast } = this.state
     const { brunch } = this.state
@@ -144,15 +128,7 @@ class Food extends React.PureComponent {
               </div>
             </div>
           </div>
-          {this.state.scrollingUp && (
-            <div>
-              <Scroll type="class" element="food__sub-nav">
-                <div className="scroll-top-top">
-                  <button>Scroll to top</button>
-                </div>
-              </Scroll>
-            </div>
-          )}
+
           {this.state.breakfast && <Breakfast />}
           {this.state.brunch && <Brunch />}
           {this.state.lunch && <Lunch />}
