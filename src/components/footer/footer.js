@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import Scroll from "../Scroll"
 const Footer = props => (
   <footer id="footer">
     <section>
@@ -20,14 +20,28 @@ const Footer = props => (
       </ul>
     </section>
     <section>
-      <h2>Etiam feugiat</h2>
+      <h2>Contact Us</h2>
       <dl className="alt">
+        <dt className="phone_number" />
+        <dd> </dd>
         <dt>Address</dt>
-        <dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-        <dt>Phone</dt>
-        <dd>(000) 000-0000 x 0000</dd>
+        <dd>106 Curlewis Street &bull; Bondi Beach, &bull; NSW 2026</dd>
+        <dt>Phone:</dt>
+        <dt>
+          <a
+            href="tel:0291301566"
+            id="callnowbutton"
+            title="call now"
+            aria-label="call us button"
+          />
+        </dt>
+        <dd>(02) 9130 1566</dd>
         <dt>Email</dt>
-        <dd>information [at] untitled.tld</dd>
+        <dd>
+          <Scroll type="id" element="contact">
+            <button>Email us here</button>
+          </Scroll>
+        </dd>
       </dl>
       <ul className="icons">
         <li>
