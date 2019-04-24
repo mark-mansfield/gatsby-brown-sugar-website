@@ -1,5 +1,6 @@
 import React from "react"
 import Disclaimer from "./foddDiscalimer"
+import ScrollToMenu from "../../ScrollToTop/scrollToTop"
 const breakfast = () => {
   return (
     <div className="venue_menus-list">
@@ -76,6 +77,9 @@ const breakfast = () => {
             {/* end menu item */}
           </div>
         </div>
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
+        />
 
         <div className="venue_menus-section">
           <h3 className="venue_menus-title font_title">Plates</h3>
@@ -226,7 +230,9 @@ const breakfast = () => {
             {/* end menu item */}
           </div>
         </div>
-
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
+        />
         <div className="venue_menus-section">
           <h3 className="venue_menus-title font_title">
             <span className="venue_menus-title-text">Kids</span>
@@ -306,7 +312,9 @@ const breakfast = () => {
             {/* end menu item */}
           </div>
         </div>
-
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
+        />
         <div className="venue_menus-section">
           <h3 className="venue_menus-title font_title">Sides</h3>
           <div className="venue_menus-items">
@@ -381,6 +389,7 @@ const breakfast = () => {
           </div>
         </div>
       </div>
+      <ScrollToMenu />
       <Disclaimer />
     </div>
   )
