@@ -1,5 +1,5 @@
-import React from "react"
-import Scroll from "../../components/Scroll"
+import React from "./node_modules/react"
+import Scroll from "../Scroll"
 const scrollToTop = () => {
   return (
     <Scroll type="class" element="food__sub-nav">

@@ -1,7 +1,7 @@
 import React from "react"
-import Disclaimer from "./foddDiscalimer"
+import Disclaimer from "./foodDiscalimer"
 
-import ScrollToMenu from "../../ScrollToTop/scrollToTop"
+import ScrollToMenu from "../../scrollToTop/scrollToTop"
 const brunch = () => {
   return (
     <div className="venue_menus-list min-viewport-height">

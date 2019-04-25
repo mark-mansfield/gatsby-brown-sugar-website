@@ -1,6 +1,6 @@
 import React from "react"
-import Disclaimer from "./foddDiscalimer"
-import ScrollToMenu from "../../ScrollToTop/scrollToTop"
+import Disclaimer from "./foodDiscalimer"
+import ScrollToMenu from "../../scrollToTop/scrollToTop"
 const breakfast = () => {
   return (
     <div className="venue_menus-list">
