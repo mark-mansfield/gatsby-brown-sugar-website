@@ -133,6 +133,7 @@ class Reservations extends React.Component {
             <div className="input_container">
               <button
                 className="form-button-accent"
+                style={{ width: "100%" }}
                 onClick={this.handleSubmit}
               >
                 search

@@ -40,9 +40,11 @@ label {
   color: dodgerblue;
   margin-top: 0.25rem;
 }
+.toolBar button:first-child {
+  margin-right: 10px;
+}
 
 button.form-button-accent {
-  margin-right: 10px;
   background-color: #e813c1;
   color: white;
 }

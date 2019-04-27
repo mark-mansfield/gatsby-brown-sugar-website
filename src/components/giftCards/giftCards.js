@@ -167,21 +167,23 @@ const giftCards = () => {
                     {errors.message}
                   </div>
                 )}
-                <button
-                  type="button"
-                  className="form-button-accent"
-                  onClick={handleReset}
-                  disabled={!dirty || isSubmitting}
-                >
-                  Reset
-                </button>
-                <button
-                  className="form-button-accent"
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  Submit
-                </button>
+                <div className="toolBar">
+                  <button
+                    type="button"
+                    className="form-button-accent"
+                    onClick={handleReset}
+                    disabled={!dirty || isSubmitting}
+                  >
+                    Reset
+                  </button>
+                  <button
+                    className="form-button-accent"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    Submit
+                  </button>
+                </div>
               </form>
             )
           }}
