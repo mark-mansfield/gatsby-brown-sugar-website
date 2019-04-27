@@ -1,3 +1,7 @@
+:root {
+  --nav-bar-height: 46px;
+}
+
 /* modal settings */
 .ReactModal__Overlay {
   opacity: 0;
@@ -75,7 +79,7 @@
   justify-content: flex-start;
   align-items: center;
   border-bottom: 0.0425rem solid rgba(55, 56, 57, 0.25);
-  height: auto;
+  height: var(--nav-bar-height);
 }
 
 .hamburger-button {
@@ -214,6 +218,7 @@ svg {
 .sub__nav-utilities-cell--gift-card {
   background-color: white;
   border-left: 0.0625rem solid rgba(16, 24, 32, 0.25);
+  border-bottom: 0.0625rem solid rgba(16, 24, 32, 0.25);
 }
 
 .header-utilities-cell--book,
@@ -222,6 +227,7 @@ svg {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: var(--nav-bar-height);
 }
 
 .header-utilities-cell--book,
@@ -445,6 +451,7 @@ svg {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: var(--nav-bar-height);
   }
 
   .sub__nav-mid-part > div:last-child {

@@ -56,7 +56,7 @@ button,
   padding: 0.8125rem 2rem;
 
   background-color: transparent;
-  /* border: 0.0625rem solid; */
+  height: var(--nav-bar-height);
   color: #69676b;
   letter-spacing: 0.07143em;
   text-align: center;
