@@ -23,14 +23,14 @@ class StickyNav extends React.Component {
             </div>
           </div>
           <div className="sub__nav-mid-part">
-            <div>
+            <div className="menus-option">
               <Scroll type="class" element="food__sub-nav">
                 <button className="simple-button">
                   <small>MENU</small>
                 </button>
               </Scroll>
             </div>
-            <div className="reservations">
+            <div className="reservations-option">
               <Scroll type="id" element="reservations">
                 <button className="simple-button">
                   <small>RESERVATIONS</small>
@@ -73,9 +73,9 @@ class StickyNav extends React.Component {
                     <span> GIFT CARDS</span>
                   </button>
                 </div>
-                <div className="sub__nav-utilites-cell header-utilities-cell--book">
+                <div className="sub__nav-utilities-cell--book">
                   <button
-                    className="button-inverted booking-option"
+                    className="booking-option"
                     onClick={this.showModal.bind(this)}
                   >
                     <svg

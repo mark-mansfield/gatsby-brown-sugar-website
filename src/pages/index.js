@@ -8,7 +8,7 @@ import Divider from "@material-ui/core/Divider"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import { withStyles } from "@material-ui/core/styles"
-import Carousel from "../components/imageCarousel/carousel"
+import ImageCarousel from "../components/imageCarousel/carousel"
 import Waypoint from "react-waypoint"
 import Scroll from "../components/Scroll"
 import Layout from "../components/layout/layout.1"
@@ -44,6 +44,7 @@ class Index extends React.Component {
       showMaps: false,
       dynamicClassNameList: "",
       left: false,
+      enableWaypoint: false,
     }
 
     this.afterOpenModal = this.afterOpenModal.bind(this)
@@ -53,6 +54,12 @@ class Index extends React.Component {
       this
     )
     this.toggleDrawer = this.toggleDrawer.bind(this)
+  }
+
+  componentDidMount() {
+    if (typeof window !== "undefined") {
+      this.setState({ enableWaypoint: true })
+    }
   }
 
   _handleMobileNavWaypointEnter = () => {
@@ -227,11 +234,7 @@ class Index extends React.Component {
           sticky={this.state.stickySubNav}
           sideDrawerState={this.toggleDrawer}
         />
-        <Waypoint
-          scrollableAncestor={window}
-          onEnter={this._handleMobileNavWaypointEnter}
-          onLeave={this._handleMobileNavWaypointLeave}
-        />
+
         <Modal
           closeTimeoutMS={300}
           style={style}
@@ -293,11 +296,13 @@ class Index extends React.Component {
           giftCardModalState={this._handleShowGiftCardModal.bind(this)}
           sideDrawerState={this.toggleDrawer}
         />
-        <Waypoint
-          scrollableAncestor={window}
-          onEnter={this._handleSubNavWaypointEnter}
-          onLeave={this._handleSubNavWaypointLeave}
-        />
+        {this.state.enableWaypoint && (
+          <Waypoint
+            scrollableAncestor={null}
+            onEnter={this._handleSubNavWaypointEnter}
+            onLeave={this._handleSubNavWaypointLeave}
+          />
+        )}
         <section id="overview" className="venue-details">
           <div className="page_section container">
             <div className="page_section-wrapper">
@@ -520,7 +525,7 @@ class Index extends React.Component {
           </div>
         </section>
         <section>
-          <Carousel />
+          <ImageCarousel />
         </section>
         <section className="page_section container">
           <div className="page__section-border" />

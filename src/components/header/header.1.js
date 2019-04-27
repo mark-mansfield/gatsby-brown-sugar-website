@@ -15,7 +15,7 @@ class Header extends React.Component {
         >
           <div className="main__header-left-part">
             <Hamburger
-              className="main__nav-hamburger-button  hamburger-button simple-button flex-row space-evenly"
+              className="main__nav-hamburger-button  hamburger-button  flex-row space-evenly"
               sideDrawerState={this.props.sideDrawerState}
             />
             <div className="main__header-branding">

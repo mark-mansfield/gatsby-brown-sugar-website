@@ -1,3 +1,20 @@
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* max-width: 82rem; */
+  /* padding-left: 1rem;
+  padding-right: 1rem; */
+  position: relative;
+}
+
+.page_section {
+  display: block;
+  padding: 1.5rem;
+  transition: opacity 1s;
+  will-change: opacity;
+}
+
 .scroll-top-top {
   position: fixed;
   left: 0px;
@@ -48,13 +65,6 @@ div.section__details-column > div > svg {
   margin-right: 1rem;
 }
 
-.page_section {
-  display: block;
-  padding: 2.5rem;
-  transition: opacity 1s;
-  will-change: opacity;
-}
-
 .section__details .page_section-inner {
   padding-bottom: 2.75rem;
   padding-top: 2.75rem;
@@ -80,16 +90,6 @@ div.section__details-column > div > svg {
   opacity: 0.3;
   position: absolute;
   border-bottom: 0.0625rem solid;
-}
-
-.container {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 82rem;
-  /* padding-left: 1rem;
-  padding-right: 1rem; */
-  position: relative;
 }
 
 .sub__nav-button {
@@ -181,6 +181,14 @@ button.cta:after {
 }
 
 @media (min-width: 46rem) {
+  .container {
+    max-width: 82rem;
+  }
+
+  .page_section {
+    padding: 2.5rem;
+  }
+
   .scroll-top-top {
     display: none;
   }

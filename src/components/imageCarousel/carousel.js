@@ -1,6 +1,5 @@
 import React from "react"
-import Flickity from "react-flickity-component"
-
+import Carousel from "nuka-carousel"
 import "../../styles/flickity.css"
 const flickityOptions = {
   initialIndex: 1,
@@ -12,37 +11,34 @@ const flickityOptions = {
   lazyLoad: 2,
 }
 
-function Carousel() {
-  return (
-    <div>
-      <Flickity options={flickityOptions}>
-        <img
-          className="images_gallery_slider-image"
-          src="https://placeimg.com/640/480/animals"
-          alt=""
-        />
-        <img
-          className="images_gallery_slider-image"
-          src="https://placeimg.com/640/480/nature"
-          alt=""
-        />
-        <img
-          className="images_gallery_slider-image"
-          src="https://placeimg.com/640/480/architecture"
-          alt=""
-        />
-        <img
-          className="images_gallery_slider-image"
-          src="https://placeimg.com/640/480/architecture"
-          alt=""
-        />
-        <img
-          className="images_gallery_slider-image"
-          src="https://placeimg.com/640/480/architecture"
-          alt=""
-        />
-      </Flickity>
-    </div>
-  )
+class imageCarousel extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showCarousel: false,
+    }
+  }
+  componentDidMount() {
+    if (typeof window !== "undefined") {
+      this.setState({ showCarousel: true })
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.showCarousel && (
+          <Carousel>
+            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide1" />
+            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide2" />
+            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide3" />
+            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide4" />
+            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide5" />
+            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide6" />
+          </Carousel>
+        )}
+      </div>
+    )
+  }
 }
-export default Carousel
+export default imageCarousel

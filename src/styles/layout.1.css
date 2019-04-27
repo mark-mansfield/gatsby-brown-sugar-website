@@ -80,6 +80,7 @@
 
 .hamburger-button {
   width: 112px;
+  padding: 0;
 }
 
 .header-menu-burger-bun--top {
@@ -132,6 +133,7 @@
 .main__header-left-part,
 .sub__nav-left-part {
   display: flex;
+  height: 100%;
 }
 
 .sub__nav-left-part {
@@ -148,7 +150,7 @@
 
 .sub__nav-branding-message {
   padding-right: 30px;
-  border-right: 0.0625rem solid rgba(16, 24, 32, 0.25);
+  border: none;
   align-items: center;
   display: flex;
   height: 100%;
@@ -215,9 +217,7 @@ svg {
 }
 
 .header-utilities-cell--book,
-.header-utilities-cell--gift-card,
-.sub__nav-utilities-cell--book,
-.sub__nav-utilities-cell--gift-card {
+.header-utilities-cell--gift-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,8 +230,8 @@ svg {
   background-color: black;
 }
 
-.gift-card-option,
-.booking-option {
+.sub__nav-utilities-cell--gift-card,
+.sub__nav-utilities-cell--book {
   display: none;
 }
 
@@ -374,33 +374,27 @@ svg {
   font-size: 11px;
 }
 
-.contact-option {
-  display: none;
-}
-.groups-option {
-  display: none;
-}
+.menus-option,
+.contact-option,
+.groups-option,
 .reservations-option {
   display: none;
 }
 
-/* remove reservation button from sub nav as we shrink down */
-@media (min-width: 29rem) {
-  .reservations-option {
-    display: flex;
-  }
-}
-
 /* remove group button from sub nav as we shrink down */
 @media (min-width: 30rem) {
-  .groups-option {
+  /* .groups-option,
+  .reservations {
     display: none;
-  }
+  } */
 }
 
 /* remove contact button from sub nav as we shrink down */
 @media (min-width: 38rem) {
-  .contact-option {
+}
+
+@media (min-width: 41rem) {
+  .reservations {
     display: none;
   }
 }
@@ -409,13 +403,11 @@ svg {
   .page_cta--sticky {
     display: none;
   }
-  .contact-option {
-    display: none;
-  }
 
-  .groups-option {
+  /* .reservations-option,
+  .contact-option {
     display: flex;
-  }
+  } */
   .ReactModal__Content {
     width: 850px;
     top: 100px;
@@ -465,15 +457,19 @@ svg {
     margin-right: 60px;
   }
 
+  .sub__nav-utilities-cell--book,
+  .sub__nav-utilities-cell--gift-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
   .sub__nav-mid-part > div:last-child {
     margin-right: 0px;
   }
 
   .sub__nav-right-part {
-    display: none;
-  }
-
-  .gift-card-option {
     display: none;
   }
 
@@ -504,6 +500,7 @@ svg {
     align-items: center;
     width: 100vw;
   }
+
   .sub__nav-hamburger-button {
     display: none;
   }
@@ -528,7 +525,7 @@ svg {
 }
 
 /* media  query for medium sized screens */
-@media (min-width: 50rem) {
+/* @media (min-width: 50rem) {
   .contact-option {
     display: flex;
   }
@@ -536,12 +533,12 @@ svg {
   .booking-option {
     display: none;
   }
-}
+} */
 
 /* Media queries for large screens */
 
 @media (min-width: 67rem) {
-  .sub__nav-right-part {
+  /* .sub__nav-right-part {
     display: none;
   }
 
@@ -550,6 +547,16 @@ svg {
   .gift-card-option,
   .booking-option {
     display: flex;
+  } */
+  .contact-option,
+  .menus-option,
+  .reservations-option,
+  .groups-option {
+    display: flex;
+  }
+
+  .sub__nav-branding-message {
+    border-right: 0.0625rem solid rgba(16, 24, 32, 0.25);
   }
 }
 
