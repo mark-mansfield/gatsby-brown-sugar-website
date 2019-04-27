@@ -381,24 +381,6 @@ svg {
   display: none;
 }
 
-/* remove group button from sub nav as we shrink down */
-@media (min-width: 30rem) {
-  /* .groups-option,
-  .reservations {
-    display: none;
-  } */
-}
-
-/* remove contact button from sub nav as we shrink down */
-@media (min-width: 38rem) {
-}
-
-@media (min-width: 41rem) {
-  .reservations {
-    display: none;
-  }
-}
-
 @media (min-width: 48rem) {
   .page_cta--sticky {
     display: none;
@@ -524,30 +506,9 @@ svg {
   }
 }
 
-/* media  query for medium sized screens */
-/* @media (min-width: 50rem) {
-  .contact-option {
-    display: flex;
-  }
-
-  .booking-option {
-    display: none;
-  }
-} */
-
-/* Media queries for large screens */
+/* Media queries for largest screens */
 
 @media (min-width: 67rem) {
-  /* .sub__nav-right-part {
-    display: none;
-  }
-
-  .contact-option,
-  .groups-option,
-  .gift-card-option,
-  .booking-option {
-    display: flex;
-  } */
   .contact-option,
   .menus-option,
   .reservations-option,
