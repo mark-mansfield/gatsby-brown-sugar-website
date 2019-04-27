@@ -169,6 +169,14 @@ class Index extends React.Component {
               <ListItemText primary="Menu" />
             </ListItem>
           </Scroll>
+
+          <ListItem button key="gift" style={{ textAlign: "center" }}>
+            <ListItemText
+              primary="Gift Cards"
+              onClick={this._handleShowGiftCardModal.bind(this)}
+            />
+          </ListItem>
+
           <Scroll type="id" element="contact">
             <ListItem button key="contact" style={{ textAlign: "center" }}>
               <ListItemText primary="Contact" />
@@ -277,6 +285,7 @@ class Index extends React.Component {
 
           <GiftCards />
         </Modal>
+
         <Drawer
           open={this.state.left}
           onClose={this.toggleDrawer("left", false)}
@@ -290,12 +299,14 @@ class Index extends React.Component {
             {sideList}
           </div>
         </Drawer>
+
         <SubNav
           sticky={this.state.stickySubNav}
           modalState={this._handleShowModal.bind(this)}
           giftCardModalState={this._handleShowGiftCardModal.bind(this)}
           sideDrawerState={this.toggleDrawer}
         />
+
         {this.state.enableWaypoint && (
           <Waypoint
             scrollableAncestor={null}
@@ -303,6 +314,7 @@ class Index extends React.Component {
             onLeave={this._handleSubNavWaypointLeave}
           />
         )}
+
         <section id="overview" className="venue-details">
           <div className="page_section container">
             <div className="page_section-wrapper">

@@ -131,7 +131,10 @@ class Reservations extends React.Component {
               </div>
             </div>
             <div className="input_container">
-              <button className="simple-button-sml" onClick={this.handleSubmit}>
+              <button
+                className="form-button-accent"
+                onClick={this.handleSubmit}
+              >
                 search
               </button>
             </div>
