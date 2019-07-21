@@ -87,7 +87,7 @@ div.section__details-column > div > svg {
   transform: translateX(-50%);
   width: calc(100% - 5rem);
   margin: 0 auto;
-  opacity: 0.3;
+  opacity: 0.1;
   position: absolute;
   border-bottom: 0.0625rem solid;
 }
@@ -129,6 +129,9 @@ button.cta:after {
   margin-top: 0.125rem;
 }
 
+.venue-details {
+  background-color: #181818;
+}
 .section__details-location {
   display: none;
   height: 100%;
@@ -149,7 +152,7 @@ button.cta:after {
 }
 
 .map-visible .cta {
-  display: none;
+  display: block;
 }
 
 .map-visible .section__details-location .section__details-map .gMap {
@@ -311,6 +314,23 @@ button.cta:after {
     max-width: 1000rem;
     height: 36rem;
     margin: 0;
+  }
+  .parallax-2 {
+    background-image: url("../images/BS-parallax-2.jpg");
+    opacity: 0.5;
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .parallax-1 {
+    background-image: url("../images/BS-parrallax.jpg");
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 

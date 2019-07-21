@@ -1,5 +1,5 @@
 import React from "react"
-import Hamburger from "../navigation/hamburgerButton"
+import Hamburger from "./hamburgerButton"
 import Scroll from "../Scroll"
 
 class StickyNav extends React.Component {

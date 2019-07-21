@@ -20,6 +20,9 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1.5;
   color: rgba(16, 24, 32, 0.5);
+  background-color: #090909;
+  color: #b3b3b3;
+  letter-spacing: 1px;
 }
 
 h1,
@@ -30,7 +33,7 @@ h5,
 h6 {
   font-family: "Merriweather", serif;
   font-weight: 300;
-  color: #101820;
+  color: #b3b3b3;
 }
 
 li {
@@ -46,7 +49,7 @@ ul {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #ff00cf26;
+  border-bottom-color: #f7d75c;
 }
 
 button,
@@ -69,6 +72,12 @@ button,
   outline: none;
   transition: all 0.2s;
 }
+
+.gift-card-button {
+  background-color: #f6d241e2;
+  border: none;
+}
+
 .button:hover,
 .hamburger-button:hover,
 .gift-card-button:hover {

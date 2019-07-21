@@ -124,10 +124,10 @@ p {
 }
 
 .venue_menus-item:after {
-  border-bottom: 0.0625rem solid currentColor;
+  border-bottom: 0.0625rem solid grey;
   content: "";
   display: block;
-  opacity: 0.1;
+  opacity: 0.5;
   width: 100%;
   position: absolute;
   bottom: 0;

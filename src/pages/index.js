@@ -15,6 +15,7 @@ import Layout from "../components/layout/layout.1"
 import Header from "../components/header/header.1"
 import SubNav from "../components/navigation/sub__nav"
 import GoogleMap from "../components/googleMaps/map"
+import Parrallax from "../components/parrallax"
 import Food from "../components/menus/food/food.1"
 import Contact from "../components/contact/contact"
 import Reservation from "../components/reservation/reservation"
@@ -420,9 +421,11 @@ class Index extends React.Component {
                               d="M0,3.8l4.2,3.8V0L0,3.8z M16,3.2H4.2v1.2H16V3.2z"
                             />
                           </svg>
-                          <span className="cta-text page_header-back-text">
-                            Back to overview
-                          </span>
+                          <button>
+                            <span className="cta-text page_header-back-text">
+                              Back to overview
+                            </span>
+                          </button>
                         </button>
                       )}
                     </div>
@@ -562,11 +565,13 @@ class Index extends React.Component {
           </div>
           <div className="page__section-border" />
         </section>
-
+        <section className="parallax-1" />
         <section className="page_section container">
           <Food />
           <div className="page__section-border" />
         </section>
+
+        <section className="parallax-2" />
 
         <section id="contact" className="page_section container">
           <div className="page_section container">

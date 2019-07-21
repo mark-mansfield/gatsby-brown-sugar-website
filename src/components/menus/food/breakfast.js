@@ -238,7 +238,7 @@ const breakfast = () => {
             <span className="venue_menus-title-text">Kids</span>
           </h3>
           <div className="venue_menus-items">
-            {/* start men item */}
+            {/* start menu item */}
             <div className="venue_menus-item">
               <div className="venue_menus-item-content">
                 <div className="venue_menus-item-info">
