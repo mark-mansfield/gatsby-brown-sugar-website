@@ -75,7 +75,7 @@ class StickyNav extends React.Component {
                 </div>
                 <div className="sub__nav-utilities-cell--book">
                   <button
-                    className="booking-option"
+                    className="button-inverted"
                     onClick={this.showModal.bind(this)}
                   >
                     <svg

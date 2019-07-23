@@ -39,24 +39,27 @@
   padding: 2rem 0;
 }
 
-.section__details-column:first-child {
-  margin-top: 0px;
-}
 .section__details-column {
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   z-index: 1;
   margin-top: 3.5rem;
+  margin-right: 10px;
 }
 
-.section__details-column_title {
-  display: flex;
+.section__details-column:first-child {
+  margin-top: 0px;
+}
+
+.section__details-column_title > h4 {
+  display: inline;
+  /* display: flex;
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
   min-width: 100%;
-  max-width: 100%;
+  max-width: 100%; */
 }
 
 div.section__details-column > div > svg {
@@ -109,7 +112,6 @@ div.section__details-column > div > svg {
   /* border: none; */
   cursor: pointer;
   display: inline-block;
-  font-size: 0.8125rem;
   line-height: 1;
   letter-spacing: 0.07692em;
   outline: none;
@@ -118,6 +120,7 @@ div.section__details-column > div > svg {
   text-transform: none;
   transition: opacity 0.2s;
 }
+
 a.cta:after,
 button.cta:after {
   background-color: currentColor;
@@ -130,8 +133,22 @@ button.cta:after {
 }
 
 .venue-details {
-  background-color: #181818;
+  display: grid;
+  place-items: center;
+  min-height: 368px;
 }
+
+.message {
+  height: 300px;
+  display: grid;
+  place-items: top;
+}
+
+.venue-details,
+#message {
+  background-color: #18181857;
+}
+
 .section__details-location {
   display: none;
   height: 100%;
@@ -170,20 +187,7 @@ button.cta:after {
   height: 14rem;
 }
 
-@media (min-width: 48rem) {
-  .page_cta--sticky {
-    display: block;
-    position: fixed;
-    bottom: 0.625rem;
-    right: 0.625rem;
-    height: 3rem;
-    z-index: 50;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-}
-
-@media (min-width: 46rem) {
+@media (min-width: 40rem) {
   .container {
     max-width: 82rem;
   }
@@ -195,6 +199,7 @@ button.cta:after {
   .scroll-top-top {
     display: none;
   }
+
   .section__details {
     flex-direction: row;
     padding: 0 4.5rem;
@@ -203,6 +208,9 @@ button.cta:after {
     justify-content: center;
   }
 
+  .section__details-column {
+    min-height: 300px;
+  }
   .align-top {
     align-items: start;
   }
@@ -229,7 +237,7 @@ button.cta:after {
 
   .section__details-column p {
     line-height: 1.46667;
-    margin-bottom: 0;
+    margin-bottom: 32px;
     letter-spacing: 0.02rem;
   }
 
@@ -332,7 +340,15 @@ button.cta:after {
     background-repeat: no-repeat;
     background-size: cover;
   }
-}
 
-@media (min-width: 67rem) {
+  .page_cta--sticky {
+    display: block;
+    position: fixed;
+    bottom: 0.625rem;
+    right: 0.625rem;
+    height: 3rem;
+    z-index: 50;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
 }

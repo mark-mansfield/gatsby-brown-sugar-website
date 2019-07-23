@@ -57,10 +57,10 @@ button,
   display: inline-block;
   vertical-align: middle;
   padding: 0.8125rem 2rem;
-
+  border: none;
   background-color: transparent;
   height: var(--nav-bar-height);
-  color: #69676b;
+  color: #fff;
   letter-spacing: 0.07143em;
   text-align: center;
   text-decoration: none;
@@ -73,8 +73,9 @@ button,
   transition: all 0.2s;
 }
 
-.gift-card-button {
-  background-color: #f6d241e2;
+.gift-card-button,
+.button-inverted {
+  background-color: dodgerblue;
   border: none;
 }
 
@@ -84,16 +85,14 @@ button,
   background-color: #d1d1d1;
 }
 
-.button-inverted {
-  background-color: transparent;
-  color: white !important;
-}
-
 button,
 .button:hover {
   cursor: pointer;
 }
 
+span {
+  color: white;
+}
 span.button-link {
   padding: none;
   text-decoration: underline;
@@ -101,10 +100,45 @@ span.button-link {
   color: #69676b;
   font-weight: bolder;
 }
-a {
-  color: #69676b;
+a,
+span.button-link,
+.cta {
+  color: dodgerBlue;
 }
 
-a:hover {
+.cta--down {
+  margin-top: 20px;
+}
+
+.slider-control-centerright,
+.slider-control-centerleft {
+  width: 20%;
+  height: 364px;
+  /* background-color: #18181857; */
+  display: grid;
+  place-items: center;
+}
+
+.slider-control-centerright > button,
+.slider-control-centerleft > button {
+  width: 100%;
+  height: 100%;
+  background-color: #18181857;
+  display: grid;
+  place-items: center;
+}
+
+.slider-control-bottomcenter {
+  display: none;
+}
+
+a:hover,
+span.button-link {
   cursor: pointer;
+}
+
+@media (min-width: 40rem) {
+  h1 {
+    font-size: 3rem;
+  }
 }

@@ -61,6 +61,8 @@ class Food extends React.PureComponent {
             <div style={{ display: "flex", flexFlow: "column" }}>
               <h1>Our Menus</h1>
               <sub>Try &amp; discover</sub>
+              <br />
+
               <div id="food-menu">
                 <ul
                   className="menu__nav-bar menu__nav-bar-tabs"
