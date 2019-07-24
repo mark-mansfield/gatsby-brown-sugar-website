@@ -8,14 +8,15 @@
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
     "formik": "^1.5.2",
-    "gatsby": "^2.3.3",
+    "gatsby": "^2.13.33",
     "gatsby-background-image": "^0.2.8-alpha4",
     "gatsby-image": "^2.0.35",
-    "gatsby-plugin-manifest": "^2.0.29",
+    "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-sharp": "^2.1.17",
+    "gh-pages": "^2.0.1",
     "google-map-react": "^1.1.4",
     "gsap": "^2.1.2",
     "imports-loader": "^0.8.0",
@@ -46,13 +47,15 @@
     "gatsby"
   ],
   "license": "MIT",
+  "homepage": "https:/mark-mansfield.github.io",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
